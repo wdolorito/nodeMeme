@@ -14,11 +14,13 @@ endpoints.commentCreate = '/Comment_Create'
 /*
 Description
 
-Post a comment to an instance. Use entityName=Instance for instance, with entityID=[instanceID].
+Post a comment to an instance. Use entityName=Instance for instance,
+with entityID=[instanceID].
 
 Parameters
 
-sessionKey - A logged in user session key. Use MgUser_Login to get a session key.
+sessionKey - A logged in user session key. Use MgUser_Login to get a session
+             key.
 optional
 
 entityName - Use 'Instance' for instances or 'Generator' for generators.
@@ -45,7 +47,8 @@ Delete a comment, will only work if the user has created it or is admin.
 
 Parameters
 
-sessionKey - A logged in user session key. Use MgUser_Login to get a session key.
+sessionKey - A logged in user session key. Use MgUser_Login to get a session
+             key.
 optional
 
 commentID - The ID of the comment.
@@ -60,11 +63,13 @@ endpoints.commentSelect = '/Comments_Select'
 /*
 Description
 
-Returns all the comments for a specific entity. Use entityName=Instance for instance, with entityID=[instanceID].
+Returns all the comments for a specific entity. Use entityName=Instance for
+instance, with entityID=[instanceID].
 
 Parameters
 
-sessionKey - A logged in user session key. Use MgUser_Login to get a session key.
+sessionKey - A logged in user session key. Use MgUser_Login to get a session
+             key.
 optional
 
 entityName - Use 'Instance' for instances or 'Generator' for generators.
@@ -88,7 +93,8 @@ Flag content for removal, for cases of harassment etc.
 
 Parameters
 
-sessionKey - A logged in user session key. Use MgUser_Login to get a session key.
+sessionKey - A logged in user session key. Use MgUser_Login to get a session
+             key.
 optional
 
 contentUrl - The URL on the website which contains the offending content.
@@ -111,7 +117,8 @@ Create a new generator.
 
 Parameters
 
-sessionKey - A logged in user session key. Use MgUser_Login to get a session key.
+sessionKey - A logged in user session key. Use MgUser_Login to get a session
+             key.
 optional
 
 image - Image url or HTTP posted file.
@@ -128,17 +135,21 @@ endpoints.generatorSelectByUrlNameOrGeneratorID = '/Generator_Select_ByUrlNameOr
 /*
 Description
 
-Returns information about a specific generator, either by its [generatorID] or by its [urlName].
+Returns information about a specific generator, either by its [generatorID] or
+by its [urlName].
 
 Parameters
 
-sessionKey - A logged in user session key. Use MgUser_Login to get a session key.
+sessionKey - A logged in user session key. Use MgUser_Login to get a session
+             key.
 optional
 
-generatorID - The GeneratorID of the generator as received from any of the Generators_Select_* methods.
+generatorID - The GeneratorID of the generator as received from any of the
+              Generators_Select_* methods.
 optional
 
-urlName - The URL name of the requested generator, e.g. 'Insanity-Wolf'. Leave as [null] to show all the generators.
+urlName - The URL name of the requested generator, e.g. 'Insanity-Wolf'. Leave
+          as [null] to show all the generators.
 
 
 Example
@@ -154,14 +165,17 @@ Returns a list of search results by the search keyword [q].
 
 Parameters
 
-sessionKey - A logged in user session key. Use MgUser_Login to get a session key.
+sessionKey - A logged in user session key. Use MgUser_Login to get a session
+             key.
 optional
 
 q - The search query.
 
-pageIndex - Page index of the requested result set. Defaults to 0 if not specified.
+pageIndex - Page index of the requested result set. Defaults to 0 if not
+            specified.
 
-pageSize - Page size of the requested result set. Defaults to 12 if not specified.
+pageSize - Page size of the requested result set. Defaults to 12 if not
+           specified.
 
 
 Example
@@ -177,14 +191,17 @@ Returns generators created by a particular user.
 
 Parameters
 
-sessionKey - A logged in user session key. Use MgUser_Login to get a session key.
+sessionKey - A logged in user session key. Use MgUser_Login to get a session
+             key.
 optional
 
 byMgUserID - The ID of the user that created the content.
 
-pageIndex - Page index of the requested result set. Defaults to 0 if not specified.
+pageIndex - Page index of the requested result set. Defaults to 0 if not
+            specified.
 
-pageSize - Page size of the requested result set. Defaults to 12 if not specified.
+pageSize - Page size of the requested result set. Defaults to 12 if not
+           specified.
 
 
 Example
@@ -196,16 +213,22 @@ endpoints.generatorsSelectByNew = '/Generators_Select_ByNew'
 /*
 Description
 
-Returns the most recently created generators. This list gets updated whenever the website moderators approve another batch of generators to appear on the website. Some generators may not be approved due to poor quality, nsfw content, etc, so this list is highly selective.
+Returns the most recently created generators. This list gets updated whenever
+the website moderators approve another batch of generators to appear on the
+website. Some generators may not be approved due to poor quality, nsfw content,
+etc, so this list is highly selective.
 
 Parameters
 
-sessionKey - A logged in user session key. Use MgUser_Login to get a session key.
+sessionKey - A logged in user session key. Use MgUser_Login to get a session
+             key.
 optional
 
-pageIndex - Page index of the requested result set. Defaults to 0 if not specified.
+pageIndex - Page index of the requested result set. Defaults to 0 if not
+            specified.
 
-pageSize - Page size of the requested result set. Defaults to 12 if not specified.
+pageSize - Page size of the requested result set. Defaults to 12 if not
+           specified.
 
 
 Example
@@ -221,14 +244,18 @@ Returns the most popular generators for the last [days] days.
 
 Parameters
 
-sessionKey - A logged in user session key. Use MgUser_Login to get a session key.
+sessionKey - A logged in user session key. Use MgUser_Login to get a session
+             key.
 optional
 
-pageIndex - Page index of the requested result set. Defaults to 0 if not specified.
+pageIndex - Page index of the requested result set. Defaults to 0 if not
+            specified.
 
-pageSize - Page size of the requested result set. Defaults to 12 if not specified.
+pageSize - Page size of the requested result set. Defaults to 12 if not
+           specified.
 
-days - The time period for which to filter the result set. ([days] == null) for all time.
+days - The time period for which to filter the result set. ([days] == null) for
+       all time.
 optional
 
 
@@ -241,11 +268,13 @@ endpoints.generatorsSelectByRecentlyCaptioned = '/Generators_Select_ByRecentlyCa
 /*
 Description
 
-Returns generators that were recently used to create an instence. Sort of most-recently-used list.
+Returns generators that were recently used to create an instence. Sort of
+most-recently-used list.
 
 Parameters
 
-sessionKey - A logged in user session key. Use MgUser_Login to get a session key.
+sessionKey - A logged in user session key. Use MgUser_Login to get a session
+             key.
 optional
 
 Example
@@ -261,10 +290,12 @@ Returns the list of generators that a particular user is subscribed to.
 
 Parameters
 
-sessionKey - A logged in user session key. Use MgUser_Login to get a session key.
+sessionKey - A logged in user session key. Use MgUser_Login to get a session
+             key.
 optional
 
-subscriberMgUserID - The mgUserID of the user whose subscriptions we're interested in.
+subscriberMgUserID - The mgUserID of the user whose subscriptions we're
+                     interested in.
 
 
 Example
@@ -280,7 +311,8 @@ Returns recently trending generators.
 
 Parameters
 
-sessionKey - A logged in user session key. Use MgUser_Login to get a session key.
+sessionKey - A logged in user session key. Use MgUser_Login to get a session
+             key.
 optional
 
 
@@ -297,14 +329,17 @@ Returns generators upvoted (liked) by a particular user.
 
 Parameters
 
-sessionKey - A logged in user session key. Use MgUser_Login to get a session key.
+sessionKey - A logged in user session key. Use MgUser_Login to get a session
+             key.
 optional
 
 byMgUserID - The ID of the user that created the content.
 
-pageIndex - Page index of the requested result set. Defaults to 0 if not specified.
+pageIndex - Page index of the requested result set. Defaults to 0 if not
+            specified.
 
-pageSize - Page size of the requested result set. Defaults to 12 if not specified.
+pageSize - Page size of the requested result set. Defaults to 12 if not
+           specified.
 
 
 Example
@@ -316,11 +351,13 @@ endpoints.generatorsSelectRelatedByDisplayName = '/Generators_Select_Related_ByD
 /*
 Description
 
-Returns generators that are related to a particular generator, a sort of 'see also' list.
+Returns generators that are related to a particular generator, a sort of 'see
+also' list.
 
 Parameters
 
-sessionKey - A logged in user session key. Use MgUser_Login to get a session key.
+sessionKey - A logged in user session key. Use MgUser_Login to get a session
+             key.
 optional
 
 displayName - The display name of the requested generator, e.g. 'Insanity Wolf'.
@@ -339,7 +376,8 @@ Returns the users who are moderators of a group.
 
 Parameters
 
-sessionKey - A logged in user session key. Use MgUser_Login to get a session key.
+sessionKey - A logged in user session key. Use MgUser_Login to get a session
+             key.
 optional
 
 groupID - The ID of the group.
@@ -354,23 +392,40 @@ endpoints.instanceCreate = '/Instance_Create'
 /*
 Description
 
-Creates a captioned image. Images created with this method are created in the database and may appear on the website. User credentials of an ordinary user must be provided to create images. Sign up on http://{memegenerator.net}/ to create your user. ImageID may by omitted to use the default template for the character, or specified to use one of the alternative templates.
+Creates a captioned image. Images created with this method are created in the
+database and may appear on the website. User credentials of an ordinary user
+must be provided to create images. Sign up on http://{memegenerator.net}/ to
+create your user. ImageID may by omitted to use the default template for the
+character, or specified to use one of the alternative templates.
 
 Parameters
 
-sessionKey - A logged in user session key. Use MgUser_Login to get a session key.
+sessionKey - A logged in user session key. Use MgUser_Login to get a session
+             key.
 optional
 
-languageCode - The language to filter the result set by, or the language of the text on the created image, indicated by a 2-letter language code. Currently supported languages are English (en), Spanish (es), French (fr), Hebrew (he), Russian (ru), Other (--).
+languageCode - The language to filter the result set by, or the language of the
+               text on the created image, indicated by a 2-letter language code.
+               Currently supported languages are English (en), Spanish (es),
+               French (fr), Hebrew (he), Russian (ru), Other (--).
 
-generatorID - The GeneratorID of the generator as received from any of the Generators_Select_* methods.
+generatorID - The GeneratorID of the generator as received from any of the
+              Generators_Select_* methods.
 
-imageID - The background image on which to caption the text. If generatorID is also requested then imageID must be one of the images of the specified generator, e.g. for Insanity Wolf (generatorID 45) the imageID must be 20, as received from any of the Generators_Select_* methods.
+imageID - The background image on which to caption the text. If generatorID is
+          also requested then imageID must be one of the images of the specified
+          generator, e.g. for Insanity Wolf (generatorID 45) the imageID must be
+          20, as received from any of the Generators_Select_* methods.
 optional
 
-text0 - The first line to appear on the image. If only one line is specified it will appear on the bottom of the image. If two lines are specified ([text0] and [text1]), [text0] will appear on the top and [text1] will appear on the bottom on the image. Both lines are automatically converted to uppercase.
+text0 - The first line to appear on the image. If only one line is specified it
+        will appear on the bottom of the image. If two lines are specified
+        ([text0] and [text1]), [text0] will appear on the top and [text1] will
+        appear on the bottom on the image. Both lines are automatically
+        converted to uppercase.
 
-text1 - The second line to appear on the image. Will appear on the bottom of the image. Automatically converted to uppercase.
+text1 - The second line to appear on the image. Will appear on the bottom of the
+        image. Automatically converted to uppercase.
 
 
 Example
@@ -382,11 +437,13 @@ endpoints.instanceDelete = '/Instance_Delete'
 /*
 Description
 
-Delete an instance, will only work if the user has created it or is admin or is moderator of the group the instance is posted in.
+Delete an instance, will only work if the user has created it or is admin or is
+moderator of the group the instance is posted in.
 
 Parameters
 
-sessionKey - A logged in user session key. Use MgUser_Login to get a session key.
+sessionKey - A logged in user session key. Use MgUser_Login to get a session
+             key.
 optional
 
 instanceID - The ID of the instance.
@@ -405,7 +462,8 @@ Select an instance by its instanceID.
 
 Parameters
 
-sessionKey - A logged in user session key. Use MgUser_Login to get a session key.
+sessionKey - A logged in user session key. Use MgUser_Login to get a session
+             key.
 optional
 
 instanceID - The ID of the instance.
@@ -424,14 +482,17 @@ Returns a list of search results of instances by the search keyword [q].
 
 Parameters
 
-sessionKey - A logged in user session key. Use MgUser_Login to get a session key.
+sessionKey - A logged in user session key. Use MgUser_Login to get a session
+             key.
 optional
 
 q - The search query.
 
-pageIndex - Page index of the requested result set. Defaults to 0 if not specified.
+pageIndex - Page index of the requested result set. Defaults to 0 if not
+            specified.
 
-pageSize - Page size of the requested result set. Defaults to 12 if not specified.
+pageSize - Page size of the requested result set. Defaults to 12 if not
+           specified.
 
 
 Example
@@ -443,18 +504,26 @@ endpoints.instancesSelectBySubscriberMgUserID = '/Instances_Select_By_Subscriber
 /*
 Description
 
-Get the feed instances of the current user. Feed instances are all the instances from the user's subscribed to generators and users.
+Get the feed instances of the current user. Feed instances are all the instances
+from the user's subscribed to generators and users.
 
 Parameters
 
-sessionKey - A logged in user session key. Use MgUser_Login to get a session key.
+sessionKey - A logged in user session key. Use MgUser_Login to get a session
+             key.
 
-languageCode - The language to filter the result set by, or the language of the text on the created image, indicated by a 2-letter language code. Currently supported languages are English (en), Spanish (es), French (fr), Hebrew (he), Russian (ru), Other (--).
+languageCode - The language to filter the result set by, or the language of the
+               text on the created image, indicated by a 2-letter language code.
+               Currently supported languages are English (en), Spanish (es),
+               French (fr), Hebrew (he), Russian (ru), Other (--).
 
-fromInstanceID - Feed instances are not paged, rather they are being infinitely scrolled. To get the next batch of instances, fromInstanceID specifies where (exclusively) we should start from.
+fromInstanceID - Feed instances are not paged, rather they are being infinitely
+                 scrolled. To get the next batch of instances, fromInstanceID
+                 specifies where (exclusively) we should start from.
 optional
 
-pageSize - Page size of the requested result set. Defaults to 12 if not specified.
+pageSize - Page size of the requested result set. Defaults to 12 if not
+           specified.
 
 
 Example
@@ -469,14 +538,17 @@ Description
 Returns instances created by a particular user.
 Parameters
 
-sessionKey - A logged in user session key. Use MgUser_Login to get a session key.
+sessionKey - A logged in user session key. Use MgUser_Login to get a session
+             key.
 optional
 
 byMgUserID - The ID of the user that created the content.
 
-pageIndex - Page index of the requested result set. Defaults to 0 if not specified.
+pageIndex - Page index of the requested result set. Defaults to 0 if not
+            specified.
 
-pageSize - Page size of the requested result set. Defaults to 12 if not specified.
+pageSize - Page size of the requested result set. Defaults to 12 if not
+           specified.
 
 
 Example
@@ -488,18 +560,26 @@ endpoints.instancesSelectByNew = '/Instances_Select_ByNew'
 /*
 Description
 
-Returns recently created instances, for a particular generator ([urlName] != null) or for all generators ([urlName] == null). Only shows moderator approved content.
+Returns recently created instances, for a particular generator
+([urlName] != null) or for all generators ([urlName] == null). Only shows
+moderator approved content.
 
 Parameters
 
-sessionKey - A logged in user session key. Use MgUser_Login to get a session key.
+sessionKey - A logged in user session key. Use MgUser_Login to get a session
+             key.
 optional
 
-languageCode - The language to filter the result set by, or the language of the text on the created image, indicated by a 2-letter language code. Currently supported languages are English (en), Spanish (es), French (fr), Hebrew (he), Russian (ru), Other (--).
+languageCode - The language to filter the result set by, or the language of the
+               text on the created image, indicated by a 2-letter language code.
+               Currently supported languages are English (en), Spanish (es),
+               French (fr), Hebrew (he), Russian (ru), Other (--).
 
-pageIndex - Page index of the requested result set. Defaults to 0 if not specified.
+pageIndex - Page index of the requested result set. Defaults to 0 if not
+            specified.
 
-urlName - The URL name of the requested generator, e.g. 'Insanity-Wolf'. Leave as [null] to show all the generators.
+urlName - The URL name of the requested generator, e.g. 'Insanity-Wolf'. Leave
+          as [null] to show all the generators.
 
 
 Example
@@ -511,20 +591,30 @@ endpoints.instancesSelectByPopular = '/Instances_Select_ByPopular'
 /*
 Description
 
-Returns the most popular instances for a particular period ([days]=null for all time, [days]=1 for the last day, [days]=7 for the last week, [days]=30 for the last month) for a particular generator ([urlName] != null) or for all generators ([urlName] == null). Only shows moderator approved content.
+Returns the most popular instances for a particular period ([days]=null for all
+time, [days]=1 for the last day, [days]=7 for the last week, [days]=30 for the
+last month) for a particular generator ([urlName] != null) or for all generators
+([urlName] == null). Only shows moderator approved content.
 
 Parameters
 
-sessionKey - A logged in user session key. Use MgUser_Login to get a session key.
+sessionKey - A logged in user session key. Use MgUser_Login to get a session
+             key.
 optional
 
-languageCode - The language to filter the result set by, or the language of the text on the created image, indicated by a 2-letter language code. Currently supported languages are English (en), Spanish (es), French (fr), Hebrew (he), Russian (ru), Other (--).
+languageCode - The language to filter the result set by, or the language of the
+               text on the created image, indicated by a 2-letter language code.
+               Currently supported languages are English (en), Spanish (es),
+               French (fr), Hebrew (he), Russian (ru), Other (--).
 
-pageIndex - Page index of the requested result set. Defaults to 0 if not specified.
+pageIndex - Page index of the requested result set. Defaults to 0 if not
+            specified.
 
-urlName - The URL name of the requested generator, e.g. 'Insanity-Wolf'. Leave as [null] to show all the generators.
+urlName - The URL name of the requested generator, e.g. 'Insanity-Wolf'. Leave
+          as [null] to show all the generators.
 
-days - The time period for which to filter the result set. ([days] == null) for all time.
+days - The time period for which to filter the result set. ([days] == null) for
+       all time.
 optional
 
 
@@ -541,14 +631,17 @@ Returns instances upvoted (liked) by a particular user.
 
 Parameters
 
-sessionKey - A logged in user session key. Use MgUser_Login to get a session key.
+sessionKey - A logged in user session key. Use MgUser_Login to get a session
+             key.
 optional
 
 byMgUserID - The ID of the user that created the content.
 
-pageIndex - Page index of the requested result set. Defaults to 0 if not specified.
+pageIndex - Page index of the requested result set. Defaults to 0 if not
+            specified.
 
-pageSize - Page size of the requested result set. Defaults to 12 if not specified.
+pageSize - Page size of the requested result set. Defaults to 12 if not
+           specified.
 
 
 Example
@@ -564,7 +657,8 @@ Returns information about an image.
 
 Parameters
 
-sessionKey - A logged in user session key. Use MgUser_Login to get a session key.
+sessionKey - A logged in user session key. Use MgUser_Login to get a session
+             key.
 optional
 
 mgImageID - An ID of an image or video file in the database.
@@ -583,7 +677,8 @@ Search the image database.
 
 Parameters
 
-sessionKey - A logged in user session key. Use MgUser_Login to get a session key.
+sessionKey - A logged in user session key. Use MgUser_Login to get a session
+             key.
 optional
 
 q - The search query.
@@ -598,13 +693,16 @@ endpoints.mgUserLogin = '/MgUser_Login'
 /*
 Description
 
-Returns a session key which can be used for methods that support a logged in user context - methods that accept [sessionKey].
+Returns a session key which can be used for methods that support a logged in
+user context - methods that accept [sessionKey].
 
 Parameters
 
-username - The credentials of a signed up user. Use the website or MgUser_Signup to sign up.
+username - The credentials of a signed up user. Use the website or MgUser_Signup
+           to sign up.
 
-password - The credentials of a signed up user. Use the website or MgUser_Signup to sign up.
+password - The credentials of a signed up user. Use the website or MgUser_Signup
+           to sign up.
 
 
 Example
@@ -620,7 +718,8 @@ Logs in with a facebook access token.
 
 Parameters
 
-facebookAccessToken - Get a facebook access token by logging in with the facebook API.
+facebookAccessToken - Get a facebook access token by logging in with the
+facebook API.
 
 
 Example
@@ -638,9 +737,11 @@ Parameters
 
 email - Email address for notification of removal.
 
-username - The credentials of a signed up user. Use the website or MgUser_Signup to sign up.
+username - The credentials of a signed up user. Use the website or MgUser_Signup
+           to sign up.
 
-password - The credentials of a signed up user. Use the website or MgUser_Signup to sign up.
+password - The credentials of a signed up user. Use the website or MgUser_Signup
+           to sign up.
 
 
 Example
@@ -656,7 +757,8 @@ Change a user's profile image.
 
 Parameters
 
-sessionKey - A logged in user session key. Use MgUser_Login to get a session key.
+sessionKey - A logged in user session key. Use MgUser_Login to get a session
+             key.
 
 image - Image url or HTTP posted file.
 
@@ -670,11 +772,13 @@ endpoints.mgUserUpdateUsername = '/MgUser_Update_Username'
 /*
 Description
 
-Change a user's username. This can be done by the user only once, when setting up their account.
+Change a user's username. This can be done by the user only once, when setting
+up their account.
 
 Parameters
 
-sessionKey - A logged in user session key. Use MgUser_Login to get a session key.
+sessionKey - A logged in user session key. Use MgUser_Login to get a session
+             key.
 
 newUsername - The new username.
 
@@ -692,10 +796,12 @@ Returns the list of users that are following a particular user.
 
 Parameters
 
-sessionKey - A logged in user session key. Use MgUser_Login to get a session key.
+sessionKey - A logged in user session key. Use MgUser_Login to get a session
+             key.
 optional
 
-publisherMgUserID - The mgUserID of a user that is being subscribed to (followed) or unsubscribed from (unfollowed).
+publisherMgUserID - The mgUserID of a user that is being subscribed to
+                    (followed) or unsubscribed from (unfollowed).
 
 
 Example
@@ -711,10 +817,12 @@ Returns the list of users that a user follows.
 
 Parameters
 
-sessionKey - A logged in user session key. Use MgUser_Login to get a session key.
+sessionKey - A logged in user session key. Use MgUser_Login to get a session
+             key.
 optional
 
-subscriberMgUserID - The mgUserID of the user whose subscriptions we're interested in.
+subscriberMgUserID - The mgUserID of the user whose subscriptions we're
+                     interested in.
 
 
 Example
@@ -726,13 +834,16 @@ endpoints.subscriptionGeneratorCreate = '/Subscription_Generator_Create'
 /*
 Description
 
-Subscribe to a generator. This is not the same as liking (upvoting) a generator. Subscribed generator's instances appear in the user's feed.
+Subscribe to a generator. This is not the same as liking (upvoting) a generator.
+Subscribed generator's instances appear in the user's feed.
 
 Parameters
 
-sessionKey - A logged in user session key. Use MgUser_Login to get a session key.
+sessionKey - A logged in user session key. Use MgUser_Login to get a session
+             key.
 
-publisherGeneratorID - The generatorID of a generator that is being subscribed to or unsubscribed from.
+publisherGeneratorID - The generatorID of a generator that is being subscribed
+                       to or unsubscribed from.
 
 
 Example
@@ -748,9 +859,11 @@ Unsubscribe from a generator.
 
 Parameters
 
-sessionKey - A logged in user session key. Use MgUser_Login to get a session key.
+sessionKey - A logged in user session key. Use MgUser_Login to get a session
+             key.
 
-publisherGeneratorID - The generatorID of a generator that is being subscribed to or unsubscribed from.
+publisherGeneratorID - The generatorID of a generator that is being subscribed
+                       to or unsubscribed from.
 
 
 Example
@@ -766,9 +879,11 @@ Subscribe to (follow) a user.
 
 Parameters
 
-sessionKey - A logged in user session key. Use MgUser_Login to get a session key.
+sessionKey - A logged in user session key. Use MgUser_Login to get a session
+             key.
 
-publisherMgUserID - The mgUserID of a user that is being subscribed to (followed) or unsubscribed from (unfollowed).
+publisherMgUserID - The mgUserID of a user that is being subscribed to
+                    (followed) or unsubscribed from (unfollowed).
 
 
 Example
@@ -784,9 +899,11 @@ Unsubscribe from (unfollow) a user.
 
 Parameters
 
-sessionKey - A logged in user session key. Use MgUser_Login to get a session key.
+sessionKey - A logged in user session key. Use MgUser_Login to get a session
+             key.
 
-publisherMgUserID - The mgUserID of a user that is being subscribed to (followed) or unsubscribed from (unfollowed).
+publisherMgUserID - The mgUserID of a user that is being subscribed to
+                    (followed) or unsubscribed from (unfollowed).
 
 
 Example
@@ -802,10 +919,12 @@ Returns a list of alternative images for a generator.
 
 Parameters
 
-sessionKey - A logged in user session key. Use MgUser_Login to get a session key.
+sessionKey - A logged in user session key. Use MgUser_Login to get a session
+             key.
 optional
 
-urlName - The URL name of the requested generator, e.g. 'Insanity-Wolf'. Leave as [null] to show all the generators.
+urlName - The URL name of the requested generator, e.g. 'Insanity-Wolf'. Leave
+          as [null] to show all the generators.
 
 
 Example
@@ -817,11 +936,14 @@ endpoints.vote = '/Vote'
 /*
 Description
 
-Vote (like/dislike) on generators and instances. VoteScore can be 1 (like), -1 (dislike) or 0 (no vote). You can vote anonymously, and to vote for a particular user (adds to their favorites), add [username] and [password] fields.
+Vote (like/dislike) on generators and instances. VoteScore can be 1 (like),
+-1 (dislike) or 0 (no vote). You can vote anonymously, and to vote for a
+particular user (adds to their favorites), add [username] and [password] fields.
 
 Parameters
 
-sessionKey - A logged in user session key. Use MgUser_Login to get a session key.
+sessionKey - A logged in user session key. Use MgUser_Login to get a session
+             key.
 optional
 
 entityName - Use 'Instance' for instances or 'Generator' for generators.
