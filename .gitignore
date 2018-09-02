@@ -124,7 +124,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# memegenerator.net apikey
-apikey
+# memegenerator.net apiKey
+apiKey
 
 # End of https://www.gitignore.io/api/node,linux,macos,windows
