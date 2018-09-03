@@ -97,7 +97,11 @@ server.listen(port, function() {
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-meme.Instances_Search('', 'insanity', 0, 12)
+// meme.Instances_Search('', 'insanity', 0, 12)
+//                         .then(function(result) {
+//                           console.log(result)
+//                         })
+meme.Instances_Select_By_SubscriberMgUserID('[sessionKey]', 'en', 1000000, 12)
                         .then(function(result) {
                           console.log(result)
                         })

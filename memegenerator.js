@@ -1234,11 +1234,24 @@ memegenerator.Instances_Search = function(sessionKey = '',
   params.pageSize = pageSize
   let qstr = returnQstr(params)
   let url = baseLink + endpoints.instancesSearch + qstr
+  return asyncCall(url)
+}
+
+memegenerator.Instances_Select_By_SubscriberMgUserID = function(sessionKey,
+                                                                languageCode,
+                                                                fromInstanceID = '',
+                                                                pageSize) {
+  let params = {}
+  params.sessionKey = sessionKey
+  params.languageCode = languageCode
+  params.fromInstanceID = fromInstanceID
+  params.pageSize = pageSize
+  let qstr = returnQstr(params)
+  let url = baseLink + endpoints.instancesSelectBySubscriberMgUserID + qstr
   console.log(url)
   return asyncCall(url)
 }
 
-memegenerator.Instances_Select_By_SubscriberMgUserID
 memegenerator.Instances_Select_ByMgUser
 memegenerator.Instances_Select_ByNew
 memegenerator.Instances_Select_ByPopular
