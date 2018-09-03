@@ -1024,9 +1024,9 @@ memegenerator.Comment_Delete = function(sessionKey = '',
 }
 
 memegenerator.Comments_Select = function(sessionKey = '',
-                                        entityName,
-                                        entityID,
-                                        parentCommentID = '') {
+                                         entityName,
+                                         entityID,
+                                         parentCommentID = '') {
   let params = {}
   params.sessionKey = sessionKey
   params.entityName = entityName
@@ -1040,9 +1040,9 @@ memegenerator.Comments_Select = function(sessionKey = '',
 }
 
 memegenerator.ContentFlag_Create = function(sessionKey = '',
-                                        contentUrl,
-                                        reason,
-                                        email) {
+                                            contentUrl,
+                                            reason,
+                                            email) {
   let params = {}
   params.sessionKey = sessionKey
   params.contentUrl = contentUrl
@@ -1055,7 +1055,20 @@ memegenerator.ContentFlag_Create = function(sessionKey = '',
   return asyncCall(url)
 }
 
-memegenerator.Generator_Create
+memegenerator.Generator_Create = function(sessionKey = '',
+                                          image,
+                                          displayName) {
+  let params = {}
+  params.sessionKey = sessionKey
+  params.image = image
+  params.displayName = displayName
+  let qstr = returnQstr(params)
+  console.log(qstr)
+  let url = baseLink + endpoints.generatorCreate + qstr
+  console.log(url)
+  return asyncCall(url)
+}
+
 memegenerator.Generator_Select_ByUrlNameOrGeneratorID
 memegenerator.Generators_Search
 memegenerator.Generators_Select_ByMgUser

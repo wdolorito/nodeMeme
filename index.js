@@ -35,3 +35,7 @@ server.listen(port, function() {
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
+// meme.Generator_Create('', 'https://cdn.meme.am/images/983.jpg', 'Insanity Wolf')
+//                      .then(function(result) {
+//                        console.log(result)
+//                      })
