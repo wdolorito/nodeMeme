@@ -1389,11 +1389,19 @@ memegenerator.MgUsers_Select_BySubscriber = function(sessionKey = '', subscriber
   params.subscriberMgUserID = subscriberMgUserID
   let qstr = returnQstr(params)
   let url = baseLink + endpoints.mgUsersSelectBySubscriber + qstr
+  return asyncCall(url)
+}
+
+memegenerator.Subscription_Generator_Create = function(sessionKey, publisherGeneratorID) {
+  let params = {}
+  params.sessionKey = sessionKey
+  params.publisherGeneratorID = publisherGeneratorID
+  let qstr = returnQstr(params)
+  let url = baseLink + endpoints.subscriptionGeneratorCreate + qstr
   console.log(url)
   return asyncCall(url)
 }
 
-memegenerator.Subscription_Generator_Create
 memegenerator.Subscription_Generator_Delete
 memegenerator.Subscription_MgUser_Create
 memegenerator.Subscription_MgUser_Delete
