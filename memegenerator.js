@@ -1448,17 +1448,7 @@ memegenerator.Vote = function(sessionKey = '',
   params.voteScore = voteScore
   let qstr = returnQstr(params)
   let url = baseLink + endpoints.vote + qstr
-  console.log(url)
   return asyncCall(url)
-}
-
-
-
-memegenerator.test = function() {
-  // let res = asyncCall(url)
-  // res.then(function(result) {
-  //   console.log(result)
-  // })
 }
 
 module.exports = memegenerator
