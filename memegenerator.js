@@ -1005,9 +1005,7 @@ memegenerator.Comment_Create = function(sessionKey = '',
   params.parentCommentID = parentCommentID
   params.text = text
   let qstr = returnQstr(params)
-  console.log(qstr)
   let url = baseLink + endpoints.commentCreate + qstr
-  console.log(url)
   return asyncCall(url)
 }
 
@@ -1017,9 +1015,7 @@ memegenerator.Comment_Delete = function(sessionKey = '',
   params.sessionKey = sessionKey
   params.commentID = commentID
   let qstr = returnQstr(params)
-  console.log(qstr)
   let url = baseLink + endpoints.commentDelete + qstr
-  console.log(url)
   return asyncCall(url)
 }
 
@@ -1033,9 +1029,7 @@ memegenerator.Comments_Select = function(sessionKey = '',
   params.entityID = entityID
   params.parentCommentID = parentCommentID
   let qstr = returnQstr(params)
-  console.log(qstr)
   let url = baseLink + endpoints.commentSelect + qstr
-  console.log(url)
   return asyncCall(url)
 }
 
@@ -1049,9 +1043,7 @@ memegenerator.ContentFlag_Create = function(sessionKey = '',
   params.reason = reason
   params.email = email
   let qstr = returnQstr(params)
-  console.log(qstr)
   let url = baseLink + endpoints.contentFlagCreate + qstr
-  console.log(url)
   return asyncCall(url)
 }
 
@@ -1063,9 +1055,7 @@ memegenerator.Generator_Create = function(sessionKey = '',
   params.image = image
   params.displayName = displayName
   let qstr = returnQstr(params)
-  console.log(qstr)
   let url = baseLink + endpoints.generatorCreate + qstr
-  console.log(url)
   return asyncCall(url)
 }
 
@@ -1077,9 +1067,7 @@ memegenerator.Generator_Select_ByUrlNameOrGeneratorID = function(sessionKey = ''
   params.generatorID = generatorID
   params.urlName = urlName
   let qstr = returnQstr(params)
-  console.log(qstr)
   let url = baseLink + endpoints.generatorSelectByUrlNameOrGeneratorID + qstr
-  console.log(url)
   return asyncCall(url)
 }
 
@@ -1093,9 +1081,7 @@ memegenerator.Generators_Search = function(sessionKey = '',
   params.pageIndex = pageIndex
   params.pageSize = pageSize
   let qstr = returnQstr(params)
-  console.log(qstr)
   let url = baseLink + endpoints.generatorsSearch + qstr
-  console.log(url)
   return asyncCall(url)
 }
 
@@ -1109,9 +1095,7 @@ memegenerator.Generators_Select_ByMgUser = function(sessionKey = '',
   params.pageIndex = pageIndex
   params.pageSize = pageSize
   let qstr = returnQstr(params)
-  console.log(qstr)
   let url = baseLink + endpoints.generatorsSelectByMgUser + qstr
-  console.log(url)
   return asyncCall(url)
 }
 
@@ -1123,13 +1107,25 @@ memegenerator.Generators_Select_ByNew = function(sessionKey = '',
   params.pageIndex = pageIndex
   params.pageSize = pageSize
   let qstr = returnQstr(params)
-  console.log(qstr)
   let url = baseLink + endpoints.generatorsSelectByNew + qstr
-  console.log(url)
   return asyncCall(url)
 }
 
-memegenerator.Generators_Select_ByPopular
+memegenerator.Generators_Select_ByPopular = function(sessionKey = '',
+                                                     pageIndex,
+                                                     pageSize,
+                                                     days = '') {
+  let params = {}
+  params.sessionKey = sessionKey
+  params.pageIndex = pageIndex
+  params.pageSize = pageSize
+  params.days = days
+  let qstr = returnQstr(params)
+  let url = baseLink + endpoints.generatorsSelectByPopular + qstr
+  return asyncCall(url)
+}
+
+
 memegenerator.Generators_Select_ByRecentlyCaptioned
 memegenerator.Generators_Select_BySubscriber
 memegenerator.Generators_Select_ByTrending
