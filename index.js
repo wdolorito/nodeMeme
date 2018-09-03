@@ -20,115 +20,114 @@ server.listen(port, function() {
   console.log('Live at Port ' + port)
 })
 
-// meme.Comment_Create('', 'Instance', 72628355, '', 'first post best post')
+// meme.setSessionKey('[session key]')
+// meme.Comment_Create('Instance', 72628355, '', 'first post best post')
 //                     .then(function(result) {
 //                       console.log(result)
 //                     })
-// meme.Comment_Delete('', -1).then(function(result) {
+// meme.Comment_Delete(-1).then(function(result) {
 //   console.log(result)
 // })
-// meme.Comments_Select('', 'Instance', 72628355, '').then(function(result) {
+// meme.Comments_Select('Instance', 72628355, '').then(function(result) {
 //   console.log(result)
 // })
-// meme.ContentFlag_Create('', 'https://memegenerator.net/John-Doe',
+// meme.ContentFlag_Create('https://memegenerator.net/John-Doe',
 //                         'personal information exposed', 'email@domain.com')
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-// meme.Generator_Create('', 'https://cdn.meme.am/images/983.jpg',
+// meme.Generator_Create('https://cdn.meme.am/images/983.jpg',
 //                      'Insanity Wolf')
 //                      .then(function(result) {
 //                        console.log(result)
 //                      })
-// meme.Generator_Select_ByUrlNameOrGeneratorID('', 45, 'Insanity-Wolf')
+// meme.Generator_Select_ByUrlNameOrGeneratorID(45, 'Insanity-Wolf')
 //                                             .then(function(result) {
 //                                               console.log(result)
 //                                             })
-// meme.Generators_Search('', 'insanity',
+// meme.Generators_Search('insanity',
 //                         0, 12)
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-// meme.Generators_Select_ByMgUser('', 1,
-//                         0, 12)
+// meme.Generators_Select_ByMgUser(1, 0, 12)
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-// meme.Generators_Select_ByNew('', 0, 12)
+// meme.Generators_Select_ByNew(0, 12)
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-// meme.Generators_Select_ByPopular('', 0, 12, '')
+// meme.Generators_Select_ByPopular(0, 12, '')
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-// meme.Generators_Select_ByRecentlyCaptioned('')
+// meme.Generators_Select_ByRecentlyCaptioned()
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-// meme.Generators_Select_BySubscriber('', 1)
+// meme.Generators_Select_BySubscriber(1)
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-// meme.Generators_Select_ByTrending('')
+// meme.Generators_Select_ByTrending()
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-// meme.Generators_Select_ByUpvoted('', 1, 0, 12)
+// meme.Generators_Select_ByUpvoted(1, 0, 12)
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-// meme.Generators_Select_Related_ByDisplayName('', 'Insanity Wolf')
+// meme.Generators_Select_Related_ByDisplayName('Insanity Wolf')
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-// meme.Group_Select_Moderators('', 2)
+// meme.Group_Select_Moderators(2)
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-// meme.Instance_Create('', 'en', 45, 20, 'push a hipster down the stairs',
+// meme.Instance_Create('en', 45, 20, 'push a hipster down the stairs',
 //                      'now look who\'s tumbling')
 //                     .then(function(result) {
 //                       console.log(result)
 //                     })
-// meme.Instance_Delete('', 72628355)
+// meme.Instance_Delete(72628355)
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-// meme.Instance_Select('', 72628355)
+// meme.Instance_Select(72628355)
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-// meme.Instances_Search('', 'insanity', 0, 12)
+// meme.Instances_Search('insanity', 0, 12)
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-// meme.Instances_Select_By_SubscriberMgUserID('[sessionKey]', 'en', 1000000,
-//                                             12)
+// meme.Instances_Select_By_SubscriberMgUserID('en', 1000000, 12)
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-// meme.Instances_Select_ByMgUser('', 1, 0, 12)
+// meme.Instances_Select_ByMgUser(1, 0, 12)
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-// meme.Instances_Select_ByNew('', 'en', 0, 'Insanity-Wolf')
+// meme.Instances_Select_ByNew('en', 0, 'Insanity-Wolf')
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-// meme.Instances_Select_ByPopular('', 'en', 0, 'Insanity-Wolf', '')
+// meme.Instances_Select_ByPopular('en', 0, 'Insanity-Wolf', '')
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-// meme.Instances_Select_ByUpvoted('', 1, 0, 12)
+// meme.Instances_Select_ByUpvoted(1, 0, 12)
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-// meme.MgImage_Select('', 42)
+// meme.MgImage_Select(42)
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-// meme.MgImages_Search('', 'insanity')
+// meme.MgImages_Search('insanity')
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
@@ -144,44 +143,42 @@ server.listen(port, function() {
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-// meme.MgUser_Update_Image('[sessionKey]',
-//                          'https://cdn.meme.am/images/983.jpg')
+// meme.MgUser_Update_Image('https://cdn.meme.am/images/983.jpg')
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-// meme.MgUser_Update_Username('[sessionKey]', 'test8')
+// meme.MgUser_Update_Username('test8')
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-// meme.MgUsers_Select_ByPublisher('', 1)
+// meme.MgUsers_Select_ByPublisher(1)
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-// meme.MgUsers_Select_BySubscriber('', 1)
+// meme.MgUsers_Select_BySubscriber(1)
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-// meme.Subscription_Generator_Create('[sessionKey]', 225)
+// meme.Subscription_Generator_Create(225)
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-// meme.Subscription_Generator_Delete('[sessionKey]', 225)
+// meme.Subscription_Generator_Delete(225)
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-// meme.Subscription_MgUser_Create('[sessionKey]', 1)
+// meme.Subscription_MgUser_Create(1)
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-// meme.Subscription_MgUser_Delete('[sessionKey]', 1)
+// meme.Subscription_MgUser_Delete(1)
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-// meme.Templates_Select_ByUrlName('', 'Insanity-Wolf')
+// meme.Templates_Select_ByUrlName('Insanity-Wolf')
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-// meme.setSessionKey('[session key]')
 // meme.Vote('Instance', 72628355, 1)
 //                         .then(function(result) {
 //                           console.log(result)
