@@ -1083,7 +1083,22 @@ memegenerator.Generator_Select_ByUrlNameOrGeneratorID = function(sessionKey = ''
   return asyncCall(url)
 }
 
-memegenerator.Generators_Search
+memegenerator.Generators_Search = function(sessionKey = '',
+                                           q,
+                                           pageIndex,
+                                           pageSize) {
+  let params = {}
+  params.sessionKey = sessionKey
+  params.q = q
+  params.pageIndex = pageIndex
+  params.pageSize = pageSize
+  let qstr = returnQstr(params)
+  console.log(qstr)
+  let url = baseLink + endpoints.generatorsSearch + qstr
+  console.log(url)
+  return asyncCall(url)
+}
+
 memegenerator.Generators_Select_ByMgUser
 memegenerator.Generators_Select_ByNew
 memegenerator.Generators_Select_ByPopular
