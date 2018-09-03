@@ -1252,9 +1252,9 @@ memegenerator.Instances_Select_By_SubscriberMgUserID = function(sessionKey,
 }
 
 memegenerator.Instances_Select_ByMgUser = function(sessionKey = '',
-                                          byMgUserID,
-                                          pageIndex,
-                                          pageSize) {
+                                                   byMgUserID,
+                                                   pageIndex,
+                                                   pageSize) {
   let params = {}
   params.sessionKey = sessionKey
   params.byMgUserID = byMgUserID
@@ -1262,11 +1262,24 @@ memegenerator.Instances_Select_ByMgUser = function(sessionKey = '',
   params.pageSize = pageSize
   let qstr = returnQstr(params)
   let url = baseLink + endpoints.instancesSelectByMgUser + qstr
+  return asyncCall(url)
+}
+
+memegenerator.Instances_Select_ByNew = function(sessionKey = '',
+                                                languageCode,
+                                                pageIndex,
+                                                urlName) {
+  let params = {}
+  params.sessionKey = sessionKey
+  params.languageCode = languageCode
+  params.pageIndex = pageIndex
+  params.urlName = urlName
+  let qstr = returnQstr(params)
+  let url = baseLink + endpoints.instancesSelectByNew + qstr
   console.log(url)
   return asyncCall(url)
 }
 
-memegenerator.Instances_Select_ByNew
 memegenerator.Instances_Select_ByPopular
 memegenerator.Instances_Select_ByUpvoted
 memegenerator.MgImage_Select

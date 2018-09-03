@@ -105,7 +105,11 @@ server.listen(port, function() {
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-meme.Instances_Select_ByMgUser('', 1, 0, 12)
+// meme.Instances_Select_ByMgUser('', 1, 0, 12)
+//                         .then(function(result) {
+//                           console.log(result)
+//                         })
+meme.Instances_Select_ByNew('', 'en', 0, 'Insanity-Wolf')
                         .then(function(result) {
                           console.log(result)
                         })
