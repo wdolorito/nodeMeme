@@ -982,7 +982,7 @@ const makeCall = function(url) {
         resolve(JSON.parse(data))
       })
     }).on("error", (err) => {
-      console.log("Error: " + err.message)
+      console.log("Call Error: " + err.message)
       resolve(err)
     })
   })
@@ -1276,11 +1276,26 @@ memegenerator.Instances_Select_ByNew = function(sessionKey = '',
   params.urlName = urlName
   let qstr = returnQstr(params)
   let url = baseLink + endpoints.instancesSelectByNew + qstr
+  return asyncCall(url)
+}
+
+memegenerator.Instances_Select_ByPopular = function(sessionKey = '',
+                                                languageCode,
+                                                pageIndex,
+                                                urlName,
+                                                days = '') {
+  let params = {}
+  params.sessionKey = sessionKey
+  params.languageCode = languageCode
+  params.pageIndex = pageIndex
+  params.urlName = urlName
+  params.days = days
+  let qstr = returnQstr(params)
+  let url = baseLink + endpoints.instancesSelectByPopular + qstr
   console.log(url)
   return asyncCall(url)
 }
 
-memegenerator.Instances_Select_ByPopular
 memegenerator.Instances_Select_ByUpvoted
 memegenerator.MgImage_Select
 memegenerator.MgImages_Search
