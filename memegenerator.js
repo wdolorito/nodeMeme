@@ -1416,11 +1416,19 @@ memegenerator.Subscription_MgUser_Create = function(sessionKey, publisherMgUserI
   params.publisherMgUserID = publisherMgUserID
   let qstr = returnQstr(params)
   let url = baseLink + endpoints.subscriptionMgUserCreate + qstr
+  return asyncCall(url)
+}
+
+memegenerator.Subscription_MgUser_Delete = function(sessionKey, publisherMgUserID) {
+  let params = {}
+  params.sessionKey = sessionKey
+  params.publisherMgUserID = publisherMgUserID
+  let qstr = returnQstr(params)
+  let url = baseLink + endpoints.subscriptionMgUserDelete + qstr
   console.log(url)
   return asyncCall(url)
 }
 
-memegenerator.Subscription_MgUser_Delete
 memegenerator.Templates_Select_ByUrlName
 memegenerator.Vote
 
