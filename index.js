@@ -77,7 +77,11 @@ server.listen(port, function() {
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-meme.Generators_Select_Related_ByDisplayName('', 'Insanity Wolf')
+// meme.Generators_Select_Related_ByDisplayName('', 'Insanity Wolf')
+//                         .then(function(result) {
+//                           console.log(result)
+//                         })
+meme.Group_Select_Moderators('', 2)
                         .then(function(result) {
                           console.log(result)
                         })

@@ -1172,11 +1172,20 @@ memegenerator.Generators_Select_Related_ByDisplayName = function(sessionKey = ''
   params.displayName = displayName
   let qstr = returnQstr(params)
   let url = baseLink + endpoints.generatorsSelectRelatedByDisplayName + qstr
+  return asyncCall(url)
+}
+
+memegenerator.Group_Select_Moderators = function(sessionKey = '',
+                                                 groupID) {
+  let params = {}
+  params.sessionKey = sessionKey
+  params.groupID = groupID
+  let qstr = returnQstr(params)
+  let url = baseLink + endpoints.groupSelectModerators + qstr
   console.log(url)
   return asyncCall(url)
 }
 
-memegenerator.Group_Select_Moderators
 memegenerator.Instance_Create
 memegenerator.Instance_Delete
 memegenerator.Instance_Select
