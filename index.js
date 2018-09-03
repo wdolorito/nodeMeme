@@ -81,7 +81,11 @@ server.listen(port, function() {
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-meme.Group_Select_Moderators('', 2)
-                        .then(function(result) {
-                          console.log(result)
-                        })
+// meme.Group_Select_Moderators('', 2)
+//                         .then(function(result) {
+//                           console.log(result)
+//                         })
+meme.Instance_Create('', 'en', 45, 20, 'push a hipster down the stairs', 'now look who\'s tumbling')
+                    .then(function(result) {
+                      console.log(result)
+                    })

@@ -1182,11 +1182,28 @@ memegenerator.Group_Select_Moderators = function(sessionKey = '',
   params.groupID = groupID
   let qstr = returnQstr(params)
   let url = baseLink + endpoints.groupSelectModerators + qstr
+  return asyncCall(url)
+}
+
+memegenerator.Instance_Create = function(sessionKey = '',
+                                         languageCode,
+                                         generatorID,
+                                         imageID = '',
+                                         text0,
+                                         text1) {
+  let params = {}
+  params.sessionKey = sessionKey
+  params.languageCode = languageCode
+  params.generatorID = generatorID
+  params.imageID = imageID
+  params.text0 = text0
+  params.text1 = text1
+  let qstr = returnQstr(params)
+  let url = baseLink + endpoints.instanceCreate + qstr
   console.log(url)
   return asyncCall(url)
 }
 
-memegenerator.Instance_Create
 memegenerator.Instance_Delete
 memegenerator.Instance_Select
 memegenerator.Instances_Search
