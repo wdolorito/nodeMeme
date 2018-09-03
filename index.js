@@ -173,7 +173,11 @@ server.listen(port, function() {
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-meme.Templates_Select_ByUrlName('', 'Insanity-Wolf')
+// meme.Templates_Select_ByUrlName('', 'Insanity-Wolf')
+//                         .then(function(result) {
+//                           console.log(result)
+//                         })
+meme.Vote('', 'Instance', 72628355, 1)
                         .then(function(result) {
                           console.log(result)
                         })

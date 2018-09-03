@@ -1434,11 +1434,24 @@ memegenerator.Templates_Select_ByUrlName = function(sessionKey = '', urlName) {
   params.urlName = urlName
   let qstr = returnQstr(params)
   let url = baseLink + endpoints.templatesSelectByUrlName + qstr
+  return asyncCall(url)
+}
+
+memegenerator.Vote = function(sessionKey = '',
+                              entityName,
+                              entityID,
+                              voteScore) {
+  let params = {}
+  params.sessionKey = sessionKey
+  params.entityName = entityName
+  params.entityID = entityID
+  params.voteScore = voteScore
+  let qstr = returnQstr(params)
+  let url = baseLink + endpoints.vote + qstr
   console.log(url)
   return asyncCall(url)
 }
 
-memegenerator.Vote
 
 
 memegenerator.test = function() {
