@@ -1407,11 +1407,19 @@ memegenerator.Subscription_Generator_Delete = function(sessionKey, publisherGene
   params.publisherGeneratorID = publisherGeneratorID
   let qstr = returnQstr(params)
   let url = baseLink + endpoints.subscriptionGeneratorDelete + qstr
+  return asyncCall(url)
+}
+
+memegenerator.Subscription_MgUser_Create = function(sessionKey, publisherMgUserID) {
+  let params = {}
+  params.sessionKey = sessionKey
+  params.publisherMgUserID = publisherMgUserID
+  let qstr = returnQstr(params)
+  let url = baseLink + endpoints.subscriptionMgUserCreate + qstr
   console.log(url)
   return asyncCall(url)
 }
 
-memegenerator.Subscription_MgUser_Create
 memegenerator.Subscription_MgUser_Delete
 memegenerator.Templates_Select_ByUrlName
 memegenerator.Vote
