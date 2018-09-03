@@ -129,7 +129,11 @@ server.listen(port, function() {
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-meme.MgUser_Login('test8', 'test8')
+// meme.MgUser_Login('test8', 'test8')
+//                         .then(function(result) {
+//                           console.log(result)
+//                         })
+meme.MgUser_Login_Facebook('[facebook access token]')
                         .then(function(result) {
                           console.log(result)
                         })
