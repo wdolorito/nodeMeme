@@ -1100,9 +1100,9 @@ memegenerator.Generators_Search = function(sessionKey = '',
 }
 
 memegenerator.Generators_Select_ByMgUser = function(sessionKey = '',
-                                           byMgUserID,
-                                           pageIndex,
-                                           pageSize) {
+                                                    byMgUserID,
+                                                    pageIndex,
+                                                    pageSize) {
   let params = {}
   params.sessionKey = sessionKey
   params.byMgUserID = byMgUserID
@@ -1115,7 +1115,20 @@ memegenerator.Generators_Select_ByMgUser = function(sessionKey = '',
   return asyncCall(url)
 }
 
-memegenerator.Generators_Select_ByNew
+memegenerator.Generators_Select_ByNew = function(sessionKey = '',
+                                                 pageIndex,
+                                                 pageSize) {
+  let params = {}
+  params.sessionKey = sessionKey
+  params.pageIndex = pageIndex
+  params.pageSize = pageSize
+  let qstr = returnQstr(params)
+  console.log(qstr)
+  let url = baseLink + endpoints.generatorsSelectByNew + qstr
+  console.log(url)
+  return asyncCall(url)
+}
+
 memegenerator.Generators_Select_ByPopular
 memegenerator.Generators_Select_ByRecentlyCaptioned
 memegenerator.Generators_Select_BySubscriber
