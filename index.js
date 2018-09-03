@@ -149,7 +149,11 @@ server.listen(port, function() {
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-meme.MgUsers_Select_ByPublisher('', 1)
+// meme.MgUsers_Select_ByPublisher('', 1)
+//                         .then(function(result) {
+//                           console.log(result)
+//                         })
+meme.MgUsers_Select_BySubscriber('', 1)
                         .then(function(result) {
                           console.log(result)
                         })
