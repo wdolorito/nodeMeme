@@ -963,8 +963,7 @@ http://version1.api.memegenerator.net//Vote?entityName=Instance&entityID=7262835
 let memegenerator = {}
 
 const returnQstr = function(params) {
-  // params.apiKey = apiKey
-  params.apiKey = 'demo'
+  params.apiKey = apiKey
   return '?' + querystring.stringify(params)
 }
 
