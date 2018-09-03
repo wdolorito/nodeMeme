@@ -181,7 +181,8 @@ server.listen(port, function() {
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-// meme.Vote('', 'Instance', 72628355, 1)
+// meme.setSessionKey('[session key]')
+// meme.Vote('Instance', 72628355, 1)
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })

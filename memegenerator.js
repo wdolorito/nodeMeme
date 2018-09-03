@@ -1,6 +1,7 @@
 const http = require('http')
 const querystring = require('querystring')
 const fs = require('fs')
+let sessionKey = ''
 let apiKey = ''
 
 try {
@@ -963,7 +964,7 @@ http://version1.api.memegenerator.net//Vote?entityName=Instance&entityID=7262835
 let memegenerator = {}
 
 const returnQstr = function(params) {
-  params.apiKey = apiKey
+  params.apiKey = apiKey.trim()
   return '?' + querystring.stringify(params)
 }
 
@@ -992,8 +993,15 @@ const asyncCall = async function(url) {
   return result
 }
 
-memegenerator.Comment_Create = function(sessionKey = '',
-                                        entityName,
+memegenerator.getSessionKey = function() {
+  return sessionKey
+}
+
+memegenerator.setSessionKey = function(newSessionKey) {
+  sessionKey = newSessionKey
+}
+
+memegenerator.Comment_Create = function(entityName,
                                         entityID,
                                         parentCommentID = '',
                                         text) {
@@ -1008,8 +1016,7 @@ memegenerator.Comment_Create = function(sessionKey = '',
   return asyncCall(url)
 }
 
-memegenerator.Comment_Delete = function(sessionKey = '',
-                                        commentID) {
+memegenerator.Comment_Delete = function(commentID) {
   let params = {}
   params.sessionKey = sessionKey
   params.commentID = commentID
@@ -1018,8 +1025,7 @@ memegenerator.Comment_Delete = function(sessionKey = '',
   return asyncCall(url)
 }
 
-memegenerator.Comments_Select = function(sessionKey = '',
-                                         entityName,
+memegenerator.Comments_Select = function(entityName,
                                          entityID,
                                          parentCommentID = '') {
   let params = {}
@@ -1032,8 +1038,7 @@ memegenerator.Comments_Select = function(sessionKey = '',
   return asyncCall(url)
 }
 
-memegenerator.ContentFlag_Create = function(sessionKey = '',
-                                            contentUrl,
+memegenerator.ContentFlag_Create = function(contentUrl,
                                             reason,
                                             email) {
   let params = {}
@@ -1046,8 +1051,7 @@ memegenerator.ContentFlag_Create = function(sessionKey = '',
   return asyncCall(url)
 }
 
-memegenerator.Generator_Create = function(sessionKey = '',
-                                          image,
+memegenerator.Generator_Create = function(image,
                                           displayName) {
   let params = {}
   params.sessionKey = sessionKey
@@ -1058,8 +1062,7 @@ memegenerator.Generator_Create = function(sessionKey = '',
   return asyncCall(url)
 }
 
-memegenerator.Generator_Select_ByUrlNameOrGeneratorID = function(sessionKey = '',
-                                                                 generatorID = '',
+memegenerator.Generator_Select_ByUrlNameOrGeneratorID = function(generatorID = '',
                                                                  urlName) {
   let params = {}
   params.sessionKey = sessionKey
@@ -1070,8 +1073,7 @@ memegenerator.Generator_Select_ByUrlNameOrGeneratorID = function(sessionKey = ''
   return asyncCall(url)
 }
 
-memegenerator.Generators_Search = function(sessionKey = '',
-                                           q,
+memegenerator.Generators_Search = function(q,
                                            pageIndex,
                                            pageSize) {
   let params = {}
@@ -1084,8 +1086,7 @@ memegenerator.Generators_Search = function(sessionKey = '',
   return asyncCall(url)
 }
 
-memegenerator.Generators_Select_ByMgUser = function(sessionKey = '',
-                                                    byMgUserID,
+memegenerator.Generators_Select_ByMgUser = function(byMgUserID,
                                                     pageIndex,
                                                     pageSize) {
   let params = {}
@@ -1098,8 +1099,7 @@ memegenerator.Generators_Select_ByMgUser = function(sessionKey = '',
   return asyncCall(url)
 }
 
-memegenerator.Generators_Select_ByNew = function(sessionKey = '',
-                                                 pageIndex,
+memegenerator.Generators_Select_ByNew = function(pageIndex,
                                                  pageSize) {
   let params = {}
   params.sessionKey = sessionKey
@@ -1110,8 +1110,7 @@ memegenerator.Generators_Select_ByNew = function(sessionKey = '',
   return asyncCall(url)
 }
 
-memegenerator.Generators_Select_ByPopular = function(sessionKey = '',
-                                                     pageIndex,
+memegenerator.Generators_Select_ByPopular = function(pageIndex,
                                                      pageSize,
                                                      days = '') {
   let params = {}
@@ -1124,7 +1123,7 @@ memegenerator.Generators_Select_ByPopular = function(sessionKey = '',
   return asyncCall(url)
 }
 
-memegenerator.Generators_Select_ByRecentlyCaptioned = function(sessionKey = '') {
+memegenerator.Generators_Select_ByRecentlyCaptioned = function() {
   let params = {}
   params.sessionKey = sessionKey
   let qstr = returnQstr(params)
@@ -1132,8 +1131,7 @@ memegenerator.Generators_Select_ByRecentlyCaptioned = function(sessionKey = '') 
   return asyncCall(url)
 }
 
-memegenerator.Generators_Select_BySubscriber = function(sessionKey = '',
-                                                        subscriberMgUserID) {
+memegenerator.Generators_Select_BySubscriber = function(subscriberMgUserID) {
   let params = {}
   params.sessionKey = sessionKey
   params.subscriberMgUserID = subscriberMgUserID
@@ -1142,7 +1140,7 @@ memegenerator.Generators_Select_BySubscriber = function(sessionKey = '',
   return asyncCall(url)
 }
 
-memegenerator.Generators_Select_ByTrending = function(sessionKey = '') {
+memegenerator.Generators_Select_ByTrending = function() {
   let params = {}
   params.sessionKey = sessionKey
   let qstr = returnQstr(params)
@@ -1150,8 +1148,7 @@ memegenerator.Generators_Select_ByTrending = function(sessionKey = '') {
   return asyncCall(url)
 }
 
-memegenerator.Generators_Select_ByUpvoted = function(sessionKey = '',
-                                                     byMgUserID,
+memegenerator.Generators_Select_ByUpvoted = function(byMgUserID,
                                                      pageIndex,
                                                      pageSize) {
   let params = {}
@@ -1164,8 +1161,7 @@ memegenerator.Generators_Select_ByUpvoted = function(sessionKey = '',
   return asyncCall(url)
 }
 
-memegenerator.Generators_Select_Related_ByDisplayName = function(sessionKey = '',
-                                                                 displayName) {
+memegenerator.Generators_Select_Related_ByDisplayName = function(displayName) {
   let params = {}
   params.sessionKey = sessionKey
   params.displayName = displayName
@@ -1174,8 +1170,7 @@ memegenerator.Generators_Select_Related_ByDisplayName = function(sessionKey = ''
   return asyncCall(url)
 }
 
-memegenerator.Group_Select_Moderators = function(sessionKey = '',
-                                                 groupID) {
+memegenerator.Group_Select_Moderators = function(groupID) {
   let params = {}
   params.sessionKey = sessionKey
   params.groupID = groupID
@@ -1184,8 +1179,7 @@ memegenerator.Group_Select_Moderators = function(sessionKey = '',
   return asyncCall(url)
 }
 
-memegenerator.Instance_Create = function(sessionKey = '',
-                                         languageCode,
+memegenerator.Instance_Create = function(languageCode,
                                          generatorID,
                                          imageID = '',
                                          text0,
@@ -1202,8 +1196,7 @@ memegenerator.Instance_Create = function(sessionKey = '',
   return asyncCall(url)
 }
 
-memegenerator.Instance_Delete = function(sessionKey = '',
-                                         instanceID) {
+memegenerator.Instance_Delete = function(instanceID) {
   let params = {}
   params.sessionKey = sessionKey
   params.instanceID = instanceID
@@ -1212,8 +1205,7 @@ memegenerator.Instance_Delete = function(sessionKey = '',
   return asyncCall(url)
 }
 
-memegenerator.Instance_Select = function(sessionKey = '',
-                                         instanceID) {
+memegenerator.Instance_Select = function(instanceID) {
   let params = {}
   params.sessionKey = sessionKey
   params.instanceID = instanceID
@@ -1222,8 +1214,7 @@ memegenerator.Instance_Select = function(sessionKey = '',
   return asyncCall(url)
 }
 
-memegenerator.Instances_Search = function(sessionKey = '',
-                                          q,
+memegenerator.Instances_Search = function(q,
                                           pageIndex,
                                           pageSize) {
   let params = {}
@@ -1236,8 +1227,7 @@ memegenerator.Instances_Search = function(sessionKey = '',
   return asyncCall(url)
 }
 
-memegenerator.Instances_Select_By_SubscriberMgUserID = function(sessionKey,
-                                                                languageCode,
+memegenerator.Instances_Select_By_SubscriberMgUserID = function(languageCode,
                                                                 fromInstanceID = '',
                                                                 pageSize) {
   let params = {}
@@ -1250,8 +1240,7 @@ memegenerator.Instances_Select_By_SubscriberMgUserID = function(sessionKey,
   return asyncCall(url)
 }
 
-memegenerator.Instances_Select_ByMgUser = function(sessionKey = '',
-                                                   byMgUserID,
+memegenerator.Instances_Select_ByMgUser = function(byMgUserID,
                                                    pageIndex,
                                                    pageSize) {
   let params = {}
@@ -1264,8 +1253,7 @@ memegenerator.Instances_Select_ByMgUser = function(sessionKey = '',
   return asyncCall(url)
 }
 
-memegenerator.Instances_Select_ByNew = function(sessionKey = '',
-                                                languageCode,
+memegenerator.Instances_Select_ByNew = function(languageCode,
                                                 pageIndex,
                                                 urlName) {
   let params = {}
@@ -1278,11 +1266,10 @@ memegenerator.Instances_Select_ByNew = function(sessionKey = '',
   return asyncCall(url)
 }
 
-memegenerator.Instances_Select_ByPopular = function(sessionKey = '',
-                                                languageCode,
-                                                pageIndex,
-                                                urlName,
-                                                days = '') {
+memegenerator.Instances_Select_ByPopular = function(languageCode,
+                                                    pageIndex,
+                                                    urlName,
+                                                    days = '') {
   let params = {}
   params.sessionKey = sessionKey
   params.languageCode = languageCode
@@ -1294,8 +1281,7 @@ memegenerator.Instances_Select_ByPopular = function(sessionKey = '',
   return asyncCall(url)
 }
 
-memegenerator.Instances_Select_ByUpvoted = function(sessionKey = '',
-                                                    byMgUserID,
+memegenerator.Instances_Select_ByUpvoted = function(byMgUserID,
                                                     pageIndex,
                                                     pageSize) {
   let params = {}
@@ -1308,8 +1294,7 @@ memegenerator.Instances_Select_ByUpvoted = function(sessionKey = '',
   return asyncCall(url)
 }
 
-memegenerator.MgImage_Select = function(sessionKey = '',
-                                        mgImageID) {
+memegenerator.MgImage_Select = function(mgImageID) {
   let params = {}
   params.sessionKey = sessionKey
   params.mgImageID = mgImageID
@@ -1318,8 +1303,7 @@ memegenerator.MgImage_Select = function(sessionKey = '',
   return asyncCall(url)
 }
 
-memegenerator.MgImages_Search = function(sessionKey = '',
-                                         q) {
+memegenerator.MgImages_Search = function(q) {
   let params = {}
   params.sessionKey = sessionKey
   params.q = q
@@ -1355,7 +1339,7 @@ memegenerator.MgUser_SignUp = function(email, username, password) {
   return asyncCall(url)
 }
 
-memegenerator.MgUser_Update_Image = function(sessionKey, image) {
+memegenerator.MgUser_Update_Image = function(image) {
   let params = {}
   params.sessionKey = sessionKey
   params.image = image
@@ -1364,7 +1348,7 @@ memegenerator.MgUser_Update_Image = function(sessionKey, image) {
   return asyncCall(url)
 }
 
-memegenerator.MgUser_Update_Username = function(sessionKey, newUsername) {
+memegenerator.MgUser_Update_Username = function(newUsername) {
   let params = {}
   params.sessionKey = sessionKey
   params.newUsername = newUsername
@@ -1373,7 +1357,7 @@ memegenerator.MgUser_Update_Username = function(sessionKey, newUsername) {
   return asyncCall(url)
 }
 
-memegenerator.MgUsers_Select_ByPublisher = function(sessionKey = '', publisherMgUserID) {
+memegenerator.MgUsers_Select_ByPublisher = function(publisherMgUserID) {
   let params = {}
   params.sessionKey = sessionKey
   params.publisherMgUserID = publisherMgUserID
@@ -1382,7 +1366,7 @@ memegenerator.MgUsers_Select_ByPublisher = function(sessionKey = '', publisherMg
   return asyncCall(url)
 }
 
-memegenerator.MgUsers_Select_BySubscriber = function(sessionKey = '', subscriberMgUserID) {
+memegenerator.MgUsers_Select_BySubscriber = function(subscriberMgUserID) {
   let params = {}
   params.sessionKey = sessionKey
   params.subscriberMgUserID = subscriberMgUserID
@@ -1391,7 +1375,7 @@ memegenerator.MgUsers_Select_BySubscriber = function(sessionKey = '', subscriber
   return asyncCall(url)
 }
 
-memegenerator.Subscription_Generator_Create = function(sessionKey, publisherGeneratorID) {
+memegenerator.Subscription_Generator_Create = function(publisherGeneratorID) {
   let params = {}
   params.sessionKey = sessionKey
   params.publisherGeneratorID = publisherGeneratorID
@@ -1400,7 +1384,7 @@ memegenerator.Subscription_Generator_Create = function(sessionKey, publisherGene
   return asyncCall(url)
 }
 
-memegenerator.Subscription_Generator_Delete = function(sessionKey, publisherGeneratorID) {
+memegenerator.Subscription_Generator_Delete = function(publisherGeneratorID) {
   let params = {}
   params.sessionKey = sessionKey
   params.publisherGeneratorID = publisherGeneratorID
@@ -1409,7 +1393,7 @@ memegenerator.Subscription_Generator_Delete = function(sessionKey, publisherGene
   return asyncCall(url)
 }
 
-memegenerator.Subscription_MgUser_Create = function(sessionKey, publisherMgUserID) {
+memegenerator.Subscription_MgUser_Create = function(publisherMgUserID) {
   let params = {}
   params.sessionKey = sessionKey
   params.publisherMgUserID = publisherMgUserID
@@ -1418,7 +1402,7 @@ memegenerator.Subscription_MgUser_Create = function(sessionKey, publisherMgUserI
   return asyncCall(url)
 }
 
-memegenerator.Subscription_MgUser_Delete = function(sessionKey, publisherMgUserID) {
+memegenerator.Subscription_MgUser_Delete = function(publisherMgUserID) {
   let params = {}
   params.sessionKey = sessionKey
   params.publisherMgUserID = publisherMgUserID
@@ -1427,7 +1411,7 @@ memegenerator.Subscription_MgUser_Delete = function(sessionKey, publisherMgUserI
   return asyncCall(url)
 }
 
-memegenerator.Templates_Select_ByUrlName = function(sessionKey = '', urlName) {
+memegenerator.Templates_Select_ByUrlName = function(urlName) {
   let params = {}
   params.sessionKey = sessionKey
   params.urlName = urlName
@@ -1436,8 +1420,7 @@ memegenerator.Templates_Select_ByUrlName = function(sessionKey = '', urlName) {
   return asyncCall(url)
 }
 
-memegenerator.Vote = function(sessionKey = '',
-                              entityName,
+memegenerator.Vote = function(entityName,
                               entityID,
                               voteScore) {
   let params = {}
@@ -1447,6 +1430,7 @@ memegenerator.Vote = function(sessionKey = '',
   params.voteScore = voteScore
   let qstr = returnQstr(params)
   let url = baseLink + endpoints.vote + qstr
+  console.log(url)
   return asyncCall(url)
 }
 
