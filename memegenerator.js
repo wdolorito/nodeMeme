@@ -1140,11 +1140,18 @@ memegenerator.Generators_Select_BySubscriber = function(sessionKey = '',
   params.subscriberMgUserID = subscriberMgUserID
   let qstr = returnQstr(params)
   let url = baseLink + endpoints.generatorsSelectBySubscriber + qstr
+  return asyncCall(url)
+}
+
+memegenerator.Generators_Select_ByTrending = function(sessionKey = '') {
+  let params = {}
+  params.sessionKey = sessionKey
+  let qstr = returnQstr(params)
+  let url = baseLink + endpoints.generatorsSelectByTrending + qstr
   console.log(url)
   return asyncCall(url)
 }
 
-memegenerator.Generators_Select_ByTrending
 memegenerator.Generators_Select_ByUpvoted
 memegenerator.Generators_Select_Related_ByDisplayName
 memegenerator.Group_Select_Moderators
