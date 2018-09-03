@@ -1362,11 +1362,19 @@ memegenerator.MgUser_Update_Image = function(sessionKey, image) {
   params.image = image
   let qstr = returnQstr(params)
   let url = baseLink + endpoints.mgUserUpdateImage + qstr
+  return asyncCall(url)
+}
+
+memegenerator.MgUser_Update_Username = function(sessionKey, newUsername) {
+  let params = {}
+  params.sessionKey = sessionKey
+  params.newUsername = newUsername
+  let qstr = returnQstr(params)
+  let url = baseLink + endpoints.mgUserUpdateUsername + qstr
   console.log(url)
   return asyncCall(url)
 }
 
-memegenerator.MgUser_Update_Username
 memegenerator.MgUsers_Select_ByPublisher
 memegenerator.MgUsers_Select_BySubscriber
 memegenerator.Subscription_Generator_Create

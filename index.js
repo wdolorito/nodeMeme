@@ -141,7 +141,11 @@ server.listen(port, function() {
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-meme.MgUser_Update_Image('[sessionKey]', 'https://cdn.meme.am/images/983.jpg')
+// meme.MgUser_Update_Image('[sessionKey]', 'https://cdn.meme.am/images/983.jpg')
+//                         .then(function(result) {
+//                           console.log(result)
+//                         })
+meme.MgUser_Update_Username('[sessionKey]', 'test8')
                         .then(function(result) {
                           console.log(result)
                         })
