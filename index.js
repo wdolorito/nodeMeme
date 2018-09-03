@@ -137,7 +137,11 @@ server.listen(port, function() {
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-meme.MgUser_SignUp('email@domain.com', 'test8', 'test8')
+// meme.MgUser_SignUp('email@domain.com', 'test8', 'test8')
+//                         .then(function(result) {
+//                           console.log(result)
+//                         })
+meme.MgUser_Update_Image('[sessionKey]', 'https://cdn.meme.am/images/983.jpg')
                         .then(function(result) {
                           console.log(result)
                         })
