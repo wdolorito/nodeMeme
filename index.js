@@ -65,3 +65,7 @@ server.listen(port, function() {
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
+// meme.Generators_Select_BySubscriber('', 1)
+//                         .then(function(result) {
+//                           console.log(result)
+//                         })
