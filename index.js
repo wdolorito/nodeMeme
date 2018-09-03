@@ -85,7 +85,11 @@ server.listen(port, function() {
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-meme.Instance_Create('', 'en', 45, 20, 'push a hipster down the stairs', 'now look who\'s tumbling')
-                    .then(function(result) {
-                      console.log(result)
-                    })
+// meme.Instance_Create('', 'en', 45, 20, 'push a hipster down the stairs', 'now look who\'s tumbling')
+//                     .then(function(result) {
+//                       console.log(result)
+//                     })
+meme.Instance_Delete('', 72628355)
+                        .then(function(result) {
+                          console.log(result)
+                        })
