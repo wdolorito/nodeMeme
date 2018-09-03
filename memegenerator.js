@@ -1326,11 +1326,19 @@ memegenerator.MgImages_Search = function(sessionKey = '',
   params.q = q
   let qstr = returnQstr(params)
   let url = baseLink + endpoints.mgImagesSearch + qstr
+  return asyncCall(url)
+}
+
+memegenerator.MgUser_Login = function(username, password) {
+  let params = {}
+  params.username = username
+  params.password = password
+  let qstr = returnQstr(params)
+  let url = baseLink + endpoints.mgUserLogin + qstr
   console.log(url)
   return asyncCall(url)
 }
 
-memegenerator.MgUser_Login
 memegenerator.MgUser_Login_Facebook
 memegenerator.MgUser_SignUp
 memegenerator.MgUser_Update_Image
