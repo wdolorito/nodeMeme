@@ -39,3 +39,7 @@ server.listen(port, function() {
 //                      .then(function(result) {
 //                        console.log(result)
 //                      })
+// meme.Generator_Select_ByUrlNameOrGeneratorID('', 45, 'Insanity-Wolf')
+//                                             .then(function(result) {
+//                                               console.log(result)
+//                                             })

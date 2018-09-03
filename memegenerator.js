@@ -1069,7 +1069,20 @@ memegenerator.Generator_Create = function(sessionKey = '',
   return asyncCall(url)
 }
 
-memegenerator.Generator_Select_ByUrlNameOrGeneratorID
+memegenerator.Generator_Select_ByUrlNameOrGeneratorID = function(sessionKey = '',
+                                                                 generatorID = '',
+                                                                 urlName) {
+  let params = {}
+  params.sessionKey = sessionKey
+  params.generatorID = generatorID
+  params.urlName = urlName
+  let qstr = returnQstr(params)
+  console.log(qstr)
+  let url = baseLink + endpoints.generatorSelectByUrlNameOrGeneratorID + qstr
+  console.log(url)
+  return asyncCall(url)
+}
+
 memegenerator.Generators_Search
 memegenerator.Generators_Select_ByMgUser
 memegenerator.Generators_Select_ByNew
