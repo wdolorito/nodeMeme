@@ -1162,11 +1162,20 @@ memegenerator.Generators_Select_ByUpvoted = function(sessionKey = '',
   params.pageSize = pageSize
   let qstr = returnQstr(params)
   let url = baseLink + endpoints.generatorsSelectByUpvoted + qstr
+  return asyncCall(url)
+}
+
+memegenerator.Generators_Select_Related_ByDisplayName = function(sessionKey = '',
+                                                                 displayName) {
+  let params = {}
+  params.sessionKey = sessionKey
+  params.displayName = displayName
+  let qstr = returnQstr(params)
+  let url = baseLink + endpoints.generatorsSelectRelatedByDisplayName + qstr
   console.log(url)
   return asyncCall(url)
 }
 
-memegenerator.Generators_Select_Related_ByDisplayName
 memegenerator.Group_Select_Moderators
 memegenerator.Instance_Create
 memegenerator.Instance_Delete
