@@ -1210,11 +1210,20 @@ memegenerator.Instance_Delete = function(sessionKey = '',
   params.instanceID = instanceID
   let qstr = returnQstr(params)
   let url = baseLink + endpoints.instanceDelete + qstr
+  return asyncCall(url)
+}
+
+memegenerator.Instance_Select = function(sessionKey = '',
+                                         instanceID) {
+  let params = {}
+  params.sessionKey = sessionKey
+  params.instanceID = instanceID
+  let qstr = returnQstr(params)
+  let url = baseLink + endpoints.instanceSelect + qstr
   console.log(url)
   return asyncCall(url)
 }
 
-memegenerator.Instance_Select
 memegenerator.Instances_Search
 memegenerator.Instances_Select_By_SubscriberMgUserID
 memegenerator.Instances_Select_ByMgUser

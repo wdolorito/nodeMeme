@@ -89,7 +89,11 @@ server.listen(port, function() {
 //                     .then(function(result) {
 //                       console.log(result)
 //                     })
-meme.Instance_Delete('', 72628355)
+// meme.Instance_Delete('', 72628355)
+//                         .then(function(result) {
+//                           console.log(result)
+//                         })
+meme.Instance_Select('', 72628355)
                         .then(function(result) {
                           console.log(result)
                         })
