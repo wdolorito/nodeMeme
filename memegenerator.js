@@ -1,3 +1,5 @@
+const http = require('http')
+const querystring = require('querystring')
 const fs = require('fs')
 let apiKey = ''
 
@@ -960,8 +962,137 @@ http://version1.api.memegenerator.net//Vote?entityName=Instance&entityID=7262835
 
 let memegenerator = {}
 
+const returnQstr = function(params) {
+  // params.apiKey = apiKey
+  params.apiKey = 'demo'
+  return '?' + querystring.stringify(params)
+}
+
+const makeCall = function(url) {
+  return new Promise(resolve => {
+    http.get(url, (resp) => {
+      let data = ''
+      // A chunk of data has been recieved.
+      resp.on('data', (chunk) => {
+        data += chunk
+      })
+
+      // The whole response has been received. Print out the result.
+      resp.on('end', () => {
+        resolve(JSON.parse(data))
+      })
+    }).on("error", (err) => {
+      console.log("Error: " + err.message)
+      resolve(err)
+    })
+  })
+}
+
+const asyncCall = async function(url) {
+  let result = await makeCall(url)
+  return result
+}
+
+memegenerator.Comment_Create = function(sessionKey = '',
+                                        entityName,
+                                        entityID,
+                                        parentCommentID = '',
+                                        text) {
+  let params = {}
+  params.sessionKey = sessionKey
+  params.entityName = entityName
+  params.entityID = entityID
+  params.parentCommentID = parentCommentID
+  params.text = text
+  let qstr = returnQstr(params)
+  console.log(qstr)
+  let url = baseLink + endpoints.commentCreate + qstr
+  console.log(url)
+  let res = asyncCall(url)
+  res.then(function(result) {
+    console.log(result)
+  }
+)}
+
+memegenerator.Comment_Delete = function(sessionKey = '',
+                                        commentID) {
+  let params = {}
+  params.sessionKey = sessionKey
+  params.commentID = commentID
+  let qstr = returnQstr(params)
+  console.log(qstr)
+  let url = baseLink + endpoints.commentDelete + qstr
+  console.log(url)
+  let res = asyncCall(url)
+  res.then(function(result) {
+    console.log(result)
+  }
+)}
+
+memegenerator.Comments_Select = function(sessionKey = '',
+                                        entityName,
+                                        entityID,
+                                        parentCommentID = '') {
+  let params = {}
+  params.sessionKey = sessionKey
+  params.entityName = entityName
+  params.entityID = entityID
+  params.parentCommentID = parentCommentID
+  let qstr = returnQstr(params)
+  console.log(qstr)
+  let url = baseLink + endpoints.commentSelect + qstr
+  console.log(url)
+  let res = asyncCall(url)
+  res.then(function(result) {
+    console.log(result)
+  }
+)}
+
+
+memegenerator.ContentFlag_Create
+memegenerator.Generator_Create
+memegenerator.Generator_Select_ByUrlNameOrGeneratorID
+memegenerator.Generators_Search
+memegenerator.Generators_Select_ByMgUser
+memegenerator.Generators_Select_ByNew
+memegenerator.Generators_Select_ByPopular
+memegenerator.Generators_Select_ByRecentlyCaptioned
+memegenerator.Generators_Select_BySubscriber
+memegenerator.Generators_Select_ByTrending
+memegenerator.Generators_Select_ByUpvoted
+memegenerator.Generators_Select_Related_ByDisplayName
+memegenerator.Group_Select_Moderators
+memegenerator.Instance_Create
+memegenerator.Instance_Delete
+memegenerator.Instance_Select
+memegenerator.Instances_Search
+memegenerator.Instances_Select_By_SubscriberMgUserID
+memegenerator.Instances_Select_ByMgUser
+memegenerator.Instances_Select_ByNew
+memegenerator.Instances_Select_ByPopular
+memegenerator.Instances_Select_ByUpvoted
+memegenerator.MgImage_Select
+memegenerator.MgImages_Search
+memegenerator.MgUser_Login
+memegenerator.MgUser_Login_Facebook
+memegenerator.MgUser_SignUp
+memegenerator.MgUser_Update_Image
+memegenerator.MgUser_Update_Username
+memegenerator.MgUsers_Select_ByPublisher
+memegenerator.MgUsers_Select_BySubscriber
+memegenerator.Subscription_Generator_Create
+memegenerator.Subscription_Generator_Delete
+memegenerator.Subscription_MgUser_Create
+memegenerator.Subscription_MgUser_Delete
+memegenerator.Templates_Select_ByUrlName
+memegenerator.Vote
+
+
 memegenerator.test = function() {
-  return 'hello world'
+  // let res = asyncCall(url)
+  // res.then(function(result) {
+  //   console.log(result)
+  // })
 }
 
 module.exports = memegenerator

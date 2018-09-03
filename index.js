@@ -20,4 +20,6 @@ server.listen(port, function() {
   console.log('Live at Port ' + port)
 })
 
- console.log(meme.test())
+// meme.Comment_Create('', 'Instance', 72628355, '', 'first post best post')
+// meme.Comment_Delete('', -1)
+// meme.Comments_Select('', 'Instance', 72628355, '')
