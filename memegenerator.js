@@ -2,7 +2,7 @@ const http = require('http')
 const querystring = require('querystring')
 const fs = require('fs')
 let sessionKey = ''
-let apiKey = ''
+let apiKey = 'demo'
 
 try {
   apiKey = fs.readFileSync(__dirname + '/apiKey', 'utf8')
@@ -1430,7 +1430,6 @@ memegenerator.Vote = function(entityName,
   params.voteScore = voteScore
   let qstr = returnQstr(params)
   let url = baseLink + endpoints.vote + qstr
-  console.log(url)
   return asyncCall(url)
 }
 
