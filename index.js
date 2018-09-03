@@ -73,3 +73,7 @@ server.listen(port, function() {
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
+meme.Generators_Select_ByUpvoted('', 1, 0, 12)
+                        .then(function(result) {
+                          console.log(result)
+                        })

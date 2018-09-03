@@ -1148,11 +1148,24 @@ memegenerator.Generators_Select_ByTrending = function(sessionKey = '') {
   params.sessionKey = sessionKey
   let qstr = returnQstr(params)
   let url = baseLink + endpoints.generatorsSelectByTrending + qstr
+  return asyncCall(url)
+}
+
+memegenerator.Generators_Select_ByUpvoted = function(sessionKey = '',
+                                                     byMgUserID,
+                                                     pageIndex,
+                                                     pageSize) {
+  let params = {}
+  params.sessionKey = sessionKey
+  params.byMgUserID = byMgUserID
+  params.pageIndex = pageIndex
+  params.pageSize = pageSize
+  let qstr = returnQstr(params)
+  let url = baseLink + endpoints.generatorsSelectByUpvoted + qstr
   console.log(url)
   return asyncCall(url)
 }
 
-memegenerator.Generators_Select_ByUpvoted
 memegenerator.Generators_Select_Related_ByDisplayName
 memegenerator.Group_Select_Moderators
 memegenerator.Instance_Create
