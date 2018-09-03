@@ -1306,12 +1306,30 @@ memegenerator.Instances_Select_ByUpvoted = function(sessionKey = '',
   params.pageSize = pageSize
   let qstr = returnQstr(params)
   let url = baseLink + endpoints.instancesSelectByUpvoted + qstr
+  return asyncCall(url)
+}
+
+memegenerator.MgImage_Select = function(sessionKey = '',
+                                        mgImageID) {
+  let params = {}
+  params.sessionKey = sessionKey
+  params.mgImageID = mgImageID
+  let qstr = returnQstr(params)
+  let url = baseLink + endpoints.mgImageSelect + qstr
+  return asyncCall(url)
+}
+
+memegenerator.MgImages_Search = function(sessionKey = '',
+                                         q) {
+  let params = {}
+  params.sessionKey = sessionKey
+  params.q = q
+  let qstr = returnQstr(params)
+  let url = baseLink + endpoints.mgImagesSearch + qstr
   console.log(url)
   return asyncCall(url)
 }
 
-memegenerator.MgImage_Select
-memegenerator.MgImages_Search
 memegenerator.MgUser_Login
 memegenerator.MgUser_Login_Facebook
 memegenerator.MgUser_SignUp

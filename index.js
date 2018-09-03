@@ -117,7 +117,15 @@ server.listen(port, function() {
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-meme.Instances_Select_ByUpvoted('', 1, 0, 12)
+// meme.Instances_Select_ByUpvoted('', 1, 0, 12)
+//                         .then(function(result) {
+//                           console.log(result)
+//                         })
+// meme.MgImage_Select('', 42)
+//                         .then(function(result) {
+//                           console.log(result)
+//                         })
+meme.MgImages_Search('', 'insanity')
                         .then(function(result) {
                           console.log(result)
                         })
