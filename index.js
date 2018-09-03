@@ -157,7 +157,11 @@ server.listen(port, function() {
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-meme.Subscription_Generator_Create('[sessionKey]', 225)
+// meme.Subscription_Generator_Create('[sessionKey]', 225)
+//                         .then(function(result) {
+//                           console.log(result)
+//                         })
+meme.Subscription_Generator_Delete('[sessionKey]', 225)
                         .then(function(result) {
                           console.log(result)
                         })

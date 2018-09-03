@@ -1398,11 +1398,19 @@ memegenerator.Subscription_Generator_Create = function(sessionKey, publisherGene
   params.publisherGeneratorID = publisherGeneratorID
   let qstr = returnQstr(params)
   let url = baseLink + endpoints.subscriptionGeneratorCreate + qstr
+  return asyncCall(url)
+}
+
+memegenerator.Subscription_Generator_Delete = function(sessionKey, publisherGeneratorID) {
+  let params = {}
+  params.sessionKey = sessionKey
+  params.publisherGeneratorID = publisherGeneratorID
+  let qstr = returnQstr(params)
+  let url = baseLink + endpoints.subscriptionGeneratorDelete + qstr
   console.log(url)
   return asyncCall(url)
 }
 
-memegenerator.Subscription_Generator_Delete
 memegenerator.Subscription_MgUser_Create
 memegenerator.Subscription_MgUser_Delete
 memegenerator.Templates_Select_ByUrlName
