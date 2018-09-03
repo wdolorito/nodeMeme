@@ -21,8 +21,17 @@ server.listen(port, function() {
 })
 
 // meme.Comment_Create('', 'Instance', 72628355, '', 'first post best post')
-// meme.Comment_Delete('', -1)
-// meme.Comments_Select('', 'Instance', 72628355, '')
-meme.ContentFlag_Create('', 'https://memegenerator.net/John-Doe', 'personal information exposed', 'email@domain.com').then(function(result) {
-  console.log(result)
-})
+//                     .then(function(result) {
+//                       console.log(result)
+//                     })
+// meme.Comment_Delete('', -1).then(function(result) {
+//   console.log(result)
+// })
+// meme.Comments_Select('', 'Instance', 72628355, '').then(function(result) {
+//   console.log(result)
+// })
+// meme.ContentFlag_Create('', 'https://memegenerator.net/John-Doe',
+//                         'personal information exposed', 'email@domain.com')
+//                         .then(function(result) {
+//                           console.log(result)
+//                         })
