@@ -145,7 +145,11 @@ server.listen(port, function() {
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-meme.MgUser_Update_Username('[sessionKey]', 'test8')
+// meme.MgUser_Update_Username('[sessionKey]', 'test8')
+//                         .then(function(result) {
+//                           console.log(result)
+//                         })
+meme.MgUsers_Select_ByPublisher('', 1)
                         .then(function(result) {
                           console.log(result)
                         })

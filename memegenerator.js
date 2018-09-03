@@ -1371,11 +1371,19 @@ memegenerator.MgUser_Update_Username = function(sessionKey, newUsername) {
   params.newUsername = newUsername
   let qstr = returnQstr(params)
   let url = baseLink + endpoints.mgUserUpdateUsername + qstr
+  return asyncCall(url)
+}
+
+memegenerator.MgUsers_Select_ByPublisher = function(sessionKey = '', publisherMgUserID) {
+  let params = {}
+  params.sessionKey = sessionKey
+  params.publisherMgUserID = publisherMgUserID
+  let qstr = returnQstr(params)
+  let url = baseLink + endpoints.mgUsersSelectByPublisher + qstr
   console.log(url)
   return asyncCall(url)
 }
 
-memegenerator.MgUsers_Select_ByPublisher
 memegenerator.MgUsers_Select_BySubscriber
 memegenerator.Subscription_Generator_Create
 memegenerator.Subscription_Generator_Delete
