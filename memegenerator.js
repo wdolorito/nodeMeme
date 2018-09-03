@@ -1125,8 +1125,15 @@ memegenerator.Generators_Select_ByPopular = function(sessionKey = '',
   return asyncCall(url)
 }
 
+memegenerator.Generators_Select_ByRecentlyCaptioned = function(sessionKey = '') {
+  let params = {}
+  params.sessionKey = sessionKey
+  let qstr = returnQstr(params)
+  let url = baseLink + endpoints.generatorsSelectByRecentlyCaptioned + qstr
+  console.log(url)
+  return asyncCall(url)
+}
 
-memegenerator.Generators_Select_ByRecentlyCaptioned
 memegenerator.Generators_Select_BySubscriber
 memegenerator.Generators_Select_ByTrending
 memegenerator.Generators_Select_ByUpvoted
