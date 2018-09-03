@@ -1008,11 +1008,8 @@ memegenerator.Comment_Create = function(sessionKey = '',
   console.log(qstr)
   let url = baseLink + endpoints.commentCreate + qstr
   console.log(url)
-  let res = asyncCall(url)
-  res.then(function(result) {
-    console.log(result)
-  }
-)}
+  return asyncCall(url)
+}
 
 memegenerator.Comment_Delete = function(sessionKey = '',
                                         commentID) {
@@ -1023,11 +1020,8 @@ memegenerator.Comment_Delete = function(sessionKey = '',
   console.log(qstr)
   let url = baseLink + endpoints.commentDelete + qstr
   console.log(url)
-  let res = asyncCall(url)
-  res.then(function(result) {
-    console.log(result)
-  }
-)}
+  return asyncCall(url)
+}
 
 memegenerator.Comments_Select = function(sessionKey = '',
                                         entityName,
@@ -1042,14 +1036,25 @@ memegenerator.Comments_Select = function(sessionKey = '',
   console.log(qstr)
   let url = baseLink + endpoints.commentSelect + qstr
   console.log(url)
-  let res = asyncCall(url)
-  res.then(function(result) {
-    console.log(result)
-  }
-)}
+  return asyncCall(url)
+}
 
+memegenerator.ContentFlag_Create = function(sessionKey = '',
+                                        contentUrl,
+                                        reason,
+                                        email) {
+  let params = {}
+  params.sessionKey = sessionKey
+  params.contentUrl = contentUrl
+  params.reason = reason
+  params.email = email
+  let qstr = returnQstr(params)
+  console.log(qstr)
+  let url = baseLink + endpoints.contentFlagCreate + qstr
+  console.log(url)
+  return asyncCall(url)
+}
 
-memegenerator.ContentFlag_Create
 memegenerator.Generator_Create
 memegenerator.Generator_Select_ByUrlNameOrGeneratorID
 memegenerator.Generators_Search
