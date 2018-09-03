@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const views = __dirname + '/views'
+const meme = require('./memeaccess')
 
 router.use(function (req, res, next) {
   console.log(Date() + ' ' + req.path + ' ' + req.method)
