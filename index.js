@@ -169,7 +169,11 @@ server.listen(port, function() {
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-meme.Subscription_MgUser_Delete('[sessionKey]', 1)
+// meme.Subscription_MgUser_Delete('[sessionKey]', 1)
+//                         .then(function(result) {
+//                           console.log(result)
+//                         })
+meme.Templates_Select_ByUrlName('', 'Insanity-Wolf')
                         .then(function(result) {
                           console.log(result)
                         })
