@@ -1292,11 +1292,24 @@ memegenerator.Instances_Select_ByPopular = function(sessionKey = '',
   params.days = days
   let qstr = returnQstr(params)
   let url = baseLink + endpoints.instancesSelectByPopular + qstr
+  return asyncCall(url)
+}
+
+memegenerator.Instances_Select_ByUpvoted = function(sessionKey = '',
+                                                    byMgUserID,
+                                                    pageIndex,
+                                                    pageSize) {
+  let params = {}
+  params.sessionKey = sessionKey
+  params.byMgUserID = byMgUserID
+  params.pageIndex = pageIndex
+  params.pageSize = pageSize
+  let qstr = returnQstr(params)
+  let url = baseLink + endpoints.instancesSelectByUpvoted + qstr
   console.log(url)
   return asyncCall(url)
 }
 
-memegenerator.Instances_Select_ByUpvoted
 memegenerator.MgImage_Select
 memegenerator.MgImages_Search
 memegenerator.MgUser_Login

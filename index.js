@@ -113,7 +113,11 @@ server.listen(port, function() {
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-meme.Instances_Select_ByPopular('', 'en', 0, 'Insanity-Wolf', '')
+// meme.Instances_Select_ByPopular('', 'en', 0, 'Insanity-Wolf', '')
+//                         .then(function(result) {
+//                           console.log(result)
+//                         })
+meme.Instances_Select_ByUpvoted('', 1, 0, 12)
                         .then(function(result) {
                           console.log(result)
                         })
