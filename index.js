@@ -133,7 +133,11 @@ server.listen(port, function() {
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-meme.MgUser_Login_Facebook('[facebook access token]')
+// meme.MgUser_Login_Facebook('[facebook access token]')
+//                         .then(function(result) {
+//                           console.log(result)
+//                         })
+meme.MgUser_SignUp('email@domain.com', 'test8', 'test8')
                         .then(function(result) {
                           console.log(result)
                         })

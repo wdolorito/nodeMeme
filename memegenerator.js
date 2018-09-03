@@ -1343,11 +1343,20 @@ memegenerator.MgUser_Login_Facebook = function(facebookAccessToken) {
   params.facebookAccessToken = facebookAccessToken
   let qstr = returnQstr(params)
   let url = baseLink + endpoints.mgUserLoginFacebook + qstr
+  return asyncCall(url)
+}
+
+memegenerator.MgUser_SignUp = function(email, username, password) {
+  let params = {}
+  params.email = email
+  params.username = username
+  params.password = password
+  let qstr = returnQstr(params)
+  let url = baseLink + endpoints.mgUserSignup + qstr
   console.log(url)
   return asyncCall(url)
 }
 
-memegenerator.MgUser_SignUp
 memegenerator.MgUser_Update_Image
 memegenerator.MgUser_Update_Username
 memegenerator.MgUsers_Select_ByPublisher
