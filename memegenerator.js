@@ -1248,11 +1248,24 @@ memegenerator.Instances_Select_By_SubscriberMgUserID = function(sessionKey,
   params.pageSize = pageSize
   let qstr = returnQstr(params)
   let url = baseLink + endpoints.instancesSelectBySubscriberMgUserID + qstr
+  return asyncCall(url)
+}
+
+memegenerator.Instances_Select_ByMgUser = function(sessionKey = '',
+                                          byMgUserID,
+                                          pageIndex,
+                                          pageSize) {
+  let params = {}
+  params.sessionKey = sessionKey
+  params.byMgUserID = byMgUserID
+  params.pageIndex = pageIndex
+  params.pageSize = pageSize
+  let qstr = returnQstr(params)
+  let url = baseLink + endpoints.instancesSelectByMgUser + qstr
   console.log(url)
   return asyncCall(url)
 }
 
-memegenerator.Instances_Select_ByMgUser
 memegenerator.Instances_Select_ByNew
 memegenerator.Instances_Select_ByPopular
 memegenerator.Instances_Select_ByUpvoted
