@@ -93,7 +93,11 @@ server.listen(port, function() {
 //                         .then(function(result) {
 //                           console.log(result)
 //                         })
-meme.Instance_Select('', 72628355)
+// meme.Instance_Select('', 72628355)
+//                         .then(function(result) {
+//                           console.log(result)
+//                         })
+meme.Instances_Search('', 'insanity', 0, 12)
                         .then(function(result) {
                           console.log(result)
                         })
