@@ -17,14 +17,54 @@
   <div class="container center-align">
     <div class="row">
       <h1>Create a random meme</h1>
+
+      <div class="row">
+        <div class="col s12 m3"></div>
+        <div class="col s12 m6">
+          <div id="custom-picker" class="container">
+            <a id="langTitle" class="dropdown-button btn purple white-text" href="#" data-activates="language">Language</a>
+            <ul id="language" class="dropdown-content purple lighten-3 black-text">
+              <li class="language" str="en">English</li>
+              <li class="language" str="es">Spanish</li>
+              <li class="language" str="fr">French</li>
+              <li class="language" str="he">Hebrew</li>
+              <li class="language" str="ru">Russian</li>
+              <li class="language" str="--">Other</li>
+            </ul>
+
+            <div class="input-field">
+              <input placeholder="Top Text" id="top-text" type="text" class="validate">
+            </div>
+
+            <img class="randoImg responsive-img">
+
+            <div class="input-field">
+              <input placeholder="Bottom Text" id="bot-text" type="text" class="validate">
+            </div>
+
+            <a id="create-meme" class="waves-effect waves-light btn purple white-text">Create Meme</a>
+          </div>
+          <div id="custom" class="container">
+            <img id="customMeme" class="responsive-img">
+            <a id="new-meme" class="waves-effect waves-light btn purple white-text">New Meme</a>
+          </div>
+        </div>
+        <div class="col s12 m3"></div>
+      </div>
     </div>
+
     <div class="row">
       <h1>Popular memes</h1>
       <div id="recent" class="row"></div>
     </div>
+
     <div class="row">
       <h3>Trending images</h3>
       <div id="trending" class="row"></div>
+    </div>
+
+    <div class="row">
+      <p>This site was an exercise in writing a node app to access an API. Everything generated dynamically on this page is from <a href="https://memegenerator.net/">https://memegenerator.net/</a>. Check them out. They're Tony the Tiger!</p>
     </div>
   </div>
 

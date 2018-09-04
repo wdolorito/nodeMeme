@@ -4,11 +4,11 @@ const fs = require('fs')
 let sessionKey = ''
 let apiKey = 'demo'
 
-// try {
-//   apiKey = fs.readFileSync(__dirname + '/apiKey', 'utf8')
-// } catch(error) {
-//   console.log(error.stack)
-// }
+try {
+  apiKey = fs.readFileSync(__dirname + '/apiKey', 'utf8')
+} catch(error) {
+  console.log(error.stack)
+}
 
 let baseLink = 'http://version1.api.memegenerator.net/'
 
