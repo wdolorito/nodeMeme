@@ -64,7 +64,7 @@ const populateTrending = function(json) {
       html += '  <div class="col s12 m4">\n'
       html += '    <h5>' + results[count].displayName + '</h5>\n'
       html += '    </br>\n'
-      html += '    <img class="timage" src="' + results[count].imageUrl + '">\n'
+      html += '    <img class="responsive-img" src="' + results[count].imageUrl + '">\n'
       html += '  </div>\n'
       if(row === 2) {
         html += '</div>\n'
@@ -89,7 +89,7 @@ const populateRecent = function(json) {
         html += '<div class="row">\n'
       }
       html += '  <div class="col s12 m4">\n'
-      html += '    <img class="timage" src="' + results[count].instanceImageUrl + '">\n'
+      html += '    <img class="responsive-img" src="' + results[count].instanceImageUrl + '">\n'
       html += '  </div>\n'
       if(row === 2) {
         html += '</div>\n'
