@@ -1,0 +1,20 @@
+commentsCount: 20
+​displayName: "The Most Interesting Man In The World"
+​entityVotesSummary: {…}
+  entityID: 22410324
+  entityName: "Instance"
+  totalVotesSum: 1628
+  userID: -1323476440
+  userVoteScore: 0
+generatorID: 74
+imageID: 2485
+imageUrl: "https://memegenerator.net/img/images/2485.jpg"
+instanceID: 22410324
+instanceImageUrl: "https://memegenerator.net/img/instances/22410324.jpg"
+instanceUrl: "https://memegenerator.net/instance/22410324"
+mgUserID: 98784199
+text0: "I don't always generate a meme"
+text1: "but when I do, I generate them twice"
+totalVotesScore: 1628
+urlName: "The-Most-Interesting-Man-In-The-World"
+username: null

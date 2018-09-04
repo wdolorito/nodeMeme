@@ -15,7 +15,8 @@ const sock = function(socket) {
   })
 
   socket.on('recent', function(sock) {
-    let recent = meme.Generators_Select_ByRecentlyCaptioned()
+    console.log('in recent')
+    let recent = meme.Instances_Select_ByPopular('en', 0, '')
     recent.then(function(res) {
       if(res) socket.emit('rreturn', res)
     }).catch(function(err) {
