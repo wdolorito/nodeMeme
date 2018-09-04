@@ -1,0 +1,14 @@
+displayName: "Bob Hoskins - Mario"
+​entityVotesSummary: {…}
+​​  entityID: 9829802
+​​  entityName: "Generator"
+​​  totalVotesSum: 1
+​​  userID: -1323476440
+​​  userVoteScore: 0
+generatorID: 9829802
+​imageID: 72515795
+​imageUrl: "https://memegenerator.net/img/images/72515795.jpg"
+​instancesCount: 4
+​ranking: null
+​totalVotesScore: 0
+​urlName: "Bob-Hoskins-Mario"

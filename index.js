@@ -1,8 +1,9 @@
 const express = require('express')
 const app = express()
 const server = require('http').createServer(app)
-const router = require('./routes')
 const io = require('socket.io')(server)
+const router = require(__dirname + '/routes')
+const sockets = require(__dirname + '/sockets')(io)
 const fs = require('fs')
 let port = 3000
 
@@ -16,6 +17,8 @@ try {
 }
 
 app.use('/', router)
+
+io.on('connection', sockets.sock)
 
 server.listen(port, function() {
   console.log('Live at Port ' + port)

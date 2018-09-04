@@ -1,1 +1,0 @@
-const meme = require('./memegenerator')
