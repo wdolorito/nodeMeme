@@ -10,7 +10,7 @@ try {
   console.log(error.stack)
 }
 
-let baseLink = 'http://version1.api.memegenerator.net/'
+let baseLink = 'http://api.memegenerator.net/'
 
 let endpoints = {}
 endpoints.commentCreate = '/Comment_Create'
