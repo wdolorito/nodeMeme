@@ -1,14 +1,14 @@
 {
-  "name": "nodeMaTemplate",
+  "name": "nodeMeme",
   "version": "1.0.0",
   "description": "Node Meme generator app (http://memegenerator.net)",
   "main": "index.js",
   "dependencies": {
-    "express": "^4.17.1",
-    "socket.io": "^2.3.0"
+    "express": "*",
+    "socket.io": "*"
   },
   "devDependencies": {
-    "nodemon": "^1.19.4"
+    "nodemon": "*"
   },
   "scripts": {
     "start": "node index.js",
